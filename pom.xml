@@ -26,6 +26,7 @@
 		<module>auth</module>
 		<module>conference-journal</module>
 		<module>intermediator</module>
+		<module>common-utils</module>
 	</modules>
 	<dependencies>
 		<!-- Swagger Api Document -->
