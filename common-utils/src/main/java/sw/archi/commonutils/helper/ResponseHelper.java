@@ -24,4 +24,12 @@ public class ResponseHelper {
         res.put(SWConstants.data, null);
         return res;
     }
+
+    public static JSONObject constructResponse(Boolean isSuccess, Integer code, Object object) {
+        if (isSuccess) {
+            return constructSuccessResponse(object);
+        } else {
+            return constructSuccessResponse(code);
+        }
+    }
 }
