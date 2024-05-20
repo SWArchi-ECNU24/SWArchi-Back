@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: common-utils # 名称自己选新的，需要能说明模块大致内容，不要重复

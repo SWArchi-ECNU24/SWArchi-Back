@@ -23,35 +23,33 @@ FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` conference `;
+        IF EXISTS conference;
 
 CREATE
     TABLE
-        ` conference `(
-            ` conference_id ` INT NOT NULL AUTO_INCREMENT,
-            ` conference_name ` VARCHAR(255) CHARACTER
+        conference(
+            conference_id INT NOT NULL AUTO_INCREMENT,
+            conference_name VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` conference_url ` VARCHAR(255) CHARACTER
+            conference_url VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` ccf_rank ` VARCHAR(255) CHARACTER
+            ccf_rank VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT 'ccf等级',
-            ` delay ` datetime NULL DEFAULT NULL COMMENT '延期',
-            ` submission_deadline ` datetime NULL DEFAULT NULL COMMENT '截稿日期',
-            ` notification_date ` datetime NULL DEFAULT NULL COMMENT '通知日期',
-            ` conference_date ` datetime NULL DEFAULT NULL COMMENT '会议日期',
-            ` conference_location ` VARCHAR(255) CHARACTER
+            delay datetime NULL DEFAULT NULL COMMENT '延期',
+            submission_deadline datetime NULL DEFAULT NULL COMMENT '截稿日期',
+            notification_date datetime NULL DEFAULT NULL COMMENT '通知日期',
+            conference_date datetime NULL DEFAULT NULL COMMENT '会议日期',
+            conference_location VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '会议地点',
-            ` session_number ` INT NULL DEFAULT NULL COMMENT '届数',
-            ` submission_information ` VARCHAR(255) CHARACTER
+            session_number INT NULL DEFAULT NULL COMMENT '届数',
+            submission_information VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '征稿信息',
-            PRIMARY KEY(
-                ` conference_id `
-            )
+            PRIMARY KEY(conference_id)
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
     SET
@@ -62,42 +60,42 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` conference_cfp `;
+        IF EXISTS conference_cfp;
 
 CREATE
     TABLE
-        ` conference_cfp `(
-            ` user_id ` INT NOT NULL,
-            ` conference_id ` INT NOT NULL,
-            ` conference_name ` VARCHAR(255) CHARACTER
+        conference_cfp(
+            user_id INT NOT NULL,
+            conference_id INT NOT NULL,
+            conference_name VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` conference_url ` VARCHAR(255) CHARACTER
+            conference_url VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` ccf_rank ` VARCHAR(255) CHARACTER
+            ccf_rank VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT 'ccf等级',
-            ` delay ` datetime NULL DEFAULT NULL COMMENT '延期',
-            ` submission_deadline ` datetime NULL DEFAULT NULL COMMENT '截稿日期',
-            ` notification_date ` datetime NULL DEFAULT NULL COMMENT '通知日期',
-            ` conference_date ` datetime NULL DEFAULT NULL COMMENT '会议日期',
-            ` conference_location ` VARCHAR(255) CHARACTER
+            delay datetime NULL DEFAULT NULL COMMENT '延期',
+            submission_deadline datetime NULL DEFAULT NULL COMMENT '截稿日期',
+            notification_date datetime NULL DEFAULT NULL COMMENT '通知日期',
+            conference_date datetime NULL DEFAULT NULL COMMENT '会议日期',
+            conference_location VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '会议地点',
-            ` session_number ` INT NULL DEFAULT NULL COMMENT '届数',
-            ` submission_information ` VARCHAR(255) CHARACTER
+            session_number INT NULL DEFAULT NULL COMMENT '届数',
+            submission_information VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '征稿信息',
-            ` is_approved ` enum(
+            is_approved enum(
                 'yes',
                 'no'
             ) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT 'no' COMMENT '是否延期',
             PRIMARY KEY(
-                ` conference_id `,
-                ` user_id `
+                conference_id,
+                user_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -109,16 +107,16 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` conference_participation `;
+        IF EXISTS conference_participation;
 
 CREATE
     TABLE
-        ` conference_participation `(
-            ` user_id ` INT NOT NULL,
-            ` conference_id ` INT NOT NULL,
+        conference_participation(
+            user_id INT NOT NULL,
+            conference_id INT NOT NULL,
             PRIMARY KEY(
-                ` user_id `,
-                ` conference_id `
+                user_id,
+                conference_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -130,16 +128,16 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` followed_conference `;
+        IF EXISTS followed_conference;
 
 CREATE
     TABLE
-        ` followed_conference `(
-            ` user_id ` INT NOT NULL,
-            ` conference_id ` INT NOT NULL,
+        followed_conference(
+            user_id INT NOT NULL,
+            conference_id INT NOT NULL,
             PRIMARY KEY(
-                ` user_id `,
-                ` conference_id `
+                user_id,
+                conference_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -151,16 +149,16 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` followed_journal `;
+        IF EXISTS followed_journal;
 
 CREATE
     TABLE
-        ` followed_journal `(
-            ` user_id ` INT NOT NULL,
-            ` conference_id ` INT NOT NULL,
+        followed_journal(
+            user_id INT NOT NULL,
+            conference_id INT NOT NULL,
             PRIMARY KEY(
-                ` user_id `,
-                ` conference_id `
+                user_id,
+                conference_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -172,16 +170,16 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` group_conference `;
+        IF EXISTS group_conference;
 
 CREATE
     TABLE
-        ` group_conference `(
-            ` group_id ` INT NOT NULL,
-            ` conference_id ` INT NOT NULL,
+        group_conference(
+            group_id INT NOT NULL,
+            conference_id INT NOT NULL,
             PRIMARY KEY(
-                ` group_id `,
-                ` conference_id `
+                group_id,
+                conference_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -193,16 +191,16 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` group_user `;
+        IF EXISTS group_user;
 
 CREATE
     TABLE
-        ` group_user `(
-            ` user_id ` INT NOT NULL,
-            ` group_id ` INT NOT NULL,
+        group_user(
+            user_id INT NOT NULL,
+            group_id INT NOT NULL,
             PRIMARY KEY(
-                ` user_id `,
-                ` group_id `
+                user_id,
+                group_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -214,39 +212,37 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` journal `;
+        IF EXISTS journal;
 
 CREATE
     TABLE
-        ` journal `(
-            ` journal_id ` INT NOT NULL AUTO_INCREMENT,
-            ` journal_name ` VARCHAR(255) CHARACTER
+        journal(
+            journal_id INT NOT NULL AUTO_INCREMENT,
+            journal_name VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` journal_url ` VARCHAR(255) CHARACTER
+            journal_url VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` ccf_rank ` VARCHAR(255) CHARACTER
+            ccf_rank VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` impact_factor ` VARCHAR(255) CHARACTER
+            impact_factor VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` publisher ` VARCHAR(255) CHARACTER
+            publisher VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` issn ` VARCHAR(255) CHARACTER
+            issn VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` submission_information ` VARCHAR(255) CHARACTER
+            submission_information VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` special_issue ` VARCHAR(255) CHARACTER
+            special_issue VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            PRIMARY KEY(
-                ` journal_id `
-            )
+            PRIMARY KEY(journal_id)
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
     SET
@@ -257,40 +253,40 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` journal_cfp `;
+        IF EXISTS journal_cfp;
 
 CREATE
     TABLE
-        ` journal_cfp `(
-            ` user_id ` INT NOT NULL,
-            ` journal_id ` INT NOT NULL,
-            ` journal_name ` VARCHAR(255) CHARACTER
+        journal_cfp(
+            user_id INT NOT NULL,
+            journal_id INT NOT NULL,
+            journal_name VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` journal_url ` VARCHAR(255) CHARACTER
+            journal_url VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` ccf_rank ` VARCHAR(255) CHARACTER
+            ccf_rank VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` impact_factor ` VARCHAR(255) CHARACTER
+            impact_factor VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` publisher ` VARCHAR(255) CHARACTER
+            publisher VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` issn ` VARCHAR(255) CHARACTER
+            issn VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` submission_information ` VARCHAR(255) CHARACTER
+            submission_information VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` special_issue ` VARCHAR(255) CHARACTER
+            special_issue VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
             PRIMARY KEY(
-                ` journal_id `,
-                ` user_id `
+                journal_id,
+                user_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -302,40 +298,40 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` journal_issue `;
+        IF EXISTS journal_issue;
 
 CREATE
     TABLE
-        ` journal_issue `(
-            ` user_id ` INT NOT NULL,
-            ` journal_id ` INT NOT NULL,
-            ` journal_name ` VARCHAR(255) CHARACTER
+        journal_issue(
+            user_id INT NOT NULL,
+            journal_id INT NOT NULL,
+            journal_name VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` journal_url ` VARCHAR(255) CHARACTER
+            journal_url VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` ccf_rank ` VARCHAR(255) CHARACTER
+            ccf_rank VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` impact_factor ` VARCHAR(255) CHARACTER
+            impact_factor VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` publisher ` VARCHAR(255) CHARACTER
+            publisher VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` issn ` VARCHAR(255) CHARACTER
+            issn VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` submission_information ` VARCHAR(255) CHARACTER
+            submission_information VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` special_issue ` VARCHAR(255) CHARACTER
+            special_issue VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
             PRIMARY KEY(
-                ` journal_id `,
-                ` user_id `
+                journal_id,
+                user_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
@@ -347,16 +343,16 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` user_followers `;
+        IF EXISTS user_followers;
 
 CREATE
     TABLE
-        ` user_followers `(
-            ` user_id ` INT NOT NULL,
-            ` followers_id ` INT NOT NULL,
+        user_followers(
+            user_id INT NOT NULL,
+            followers_id INT NOT NULL,
             PRIMARY KEY(
-                ` user_id `,
-                ` followers_id `
+                user_id,
+                followers_id
             )
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER

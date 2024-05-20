@@ -23,34 +23,32 @@ FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS ` USER `;
+        IF EXISTS USER;
 
 CREATE
     TABLE
-        ` USER `(
-            ` user_id ` INT NOT NULL AUTO_INCREMENT,
-            ` user_name ` VARCHAR(255) CHARACTER
+        USER(
+            user_id INT NOT NULL AUTO_INCREMENT,
+            user_name VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` user_password ` VARCHAR(255) CHARACTER
+            user_password VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` authority ` enum(
+            authority enum(
                 'administrator',
                 'user'
             ) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT 'user',
-            ` email ` VARCHAR(255) CHARACTER
+            email VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` institution ` VARCHAR(255) CHARACTER
+            institution VARCHAR(255) CHARACTER
         SET
             utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-            ` signup_date ` datetime NULL DEFAULT NULL,
-            PRIMARY KEY(
-                ` user_id `
-            )
+            signup_date datetime NULL DEFAULT NULL,
+            PRIMARY KEY(user_id)
                 USING BTREE
         ) ENGINE = InnoDB CHARACTER
     SET
