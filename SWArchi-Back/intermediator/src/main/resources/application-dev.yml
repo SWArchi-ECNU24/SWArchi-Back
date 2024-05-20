@@ -1,0 +1,35 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 2GB
+
+server:
+  port: 5277 # 端口号自己配新的，不要重复
+  servlet:
+    encoding:
+      force-response: true
+      charset: UTF-8
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5272/eureka/
+
+springfox:
+  documentation:
+    enabled: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+application:
+  auth:
+    url: http://AUTH-SERVICE/
+    default-url: http://localhost:5273/
+  confjour:
+    url: http://CONFJOUR-SERVICE/
+    default-url: http://localhost:5274/
