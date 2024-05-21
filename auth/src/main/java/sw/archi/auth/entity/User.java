@@ -1,5 +1,6 @@
 package sw.archi.auth.entity;
 
+<<<<<<< HEAD
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,3 +40,7 @@ public class User {
     @Column(name = "signup_date")
     Date authority;
 }
+=======
+public class User {
+}
+>>>>>>> 4cad37abb387eb21150ec5262e461568451e39e9
