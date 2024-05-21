@@ -1,6 +1,6 @@
-package sw.archi.auth.dao;
+package sw.archi.conferencejournal.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import sw.archi.auth.entity.User;
+import sw.archi.conferencejournal.entity.Conference;
 
-public interface UserRepository extends JpaRepository<User, Integer> {}
+public interface ConferenceRepository extends JpaRepository<Conference, Integer> {}

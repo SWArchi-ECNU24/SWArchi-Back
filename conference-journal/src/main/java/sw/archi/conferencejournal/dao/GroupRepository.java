@@ -1,6 +1,6 @@
 package sw.archi.conferencejournal.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import sw.archi.conferencejournal.entity.FollowedJournal;
+import sw.archi.conferencejournal.entity.Group;
 
-public interface FollowedJournalRepository extends JpaRepository<FollowedJournal, Integer> {}
+public interface GroupRepository extends JpaRepository<Group, Integer> {}

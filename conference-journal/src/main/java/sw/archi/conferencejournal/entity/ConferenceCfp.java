@@ -1,4 +1,4 @@
-package sw.archi.auth.entity;
+  package sw.archi.conferencejournal.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -14,12 +14,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Conference {
+public class ConferenceCfp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cfp_id", nullable = false)
+    int cfpId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
     @Column(name = "conference_id", nullable = false)
     int conferenceId;
+
+    @Column(name = "user_id", nullable = false)
+    int userId;
 
     @Column(name = "conference_name")
     String conferenceName;
@@ -50,4 +58,7 @@ public class Conference {
 
     @Column(name = "submission_information")
     String submissionInformation;
+
+    @Column(name = "is_approved")
+    String isApproved;
 }

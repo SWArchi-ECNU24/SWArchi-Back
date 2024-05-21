@@ -1,4 +1,4 @@
-  package sw.archi.auth.entity;
+  package sw.archi.conferencejournal.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -14,16 +14,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Conference {
+public class GroupUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "followed_id", nullable = false)
-    int followedId;
+    @Column(name = "gu_id", nullable = false)
+    int guId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
-    @Column(name = "conference_id", nullable = false)
+    @JoinColumn(name = "group_id", referencedColumnName = "group_id")
+    @Column(name = "group_id", nullable = false)
     int conferenceId;
 
     @Column(name = "user_id", nullable = false)

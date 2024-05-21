@@ -1,4 +1,4 @@
-package sw.archi.auth.entity;
+package sw.archi.conferencejournal.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -14,40 +14,34 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Conference {
+public class Journal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "conference_id", nullable = false)
-    int conferenceId;
+    @Column(name = "journal_id", nullable = false)
+    int journalId;
 
-    @Column(name = "conference_name")
-    String conferenceName;
+    @Column(name = "journal_name")
+    String journalName;
 
-    @Column(name = "conference_url")
-    String conferenceUrl;
+    @Column(name = "journal_url")
+    String journalUrl;
 
     @Column(name = "ccf_rank")
     String ccfRank;
 
-    @Column(name = "delay")
-    String delay;
+    @Column(name = "impact_factor")
+    String impactFactor;
 
-    @Column(name = "submission_deadline")
-    String submissionDeadline;
+    @Column(name = "publisher")
+    String publisher;
 
-    @Column(name = "notification_date")
-    Date notificationDate;
-
-    @Column(name = "conference_date")
-    Date conferenceDate;
-
-    @Column(name = "conference_location")
-    Date conferenceLocation;
-
-    @Column(name = "session_number")
-    Date sessionNumber;
+    @Column(name = "issn")
+    String issn;
 
     @Column(name = "submission_information")
-    Date submissionInformation;
+    String submissionInformation;
+
+    @Column(name = "special_issue")
+    String specialIssue;
 }

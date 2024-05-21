@@ -14,34 +14,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Journal {
+public class Group {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "journal_id", nullable = false)
-    int journalId;
+    @Column(name = "group_id", nullable = false)
+    int groupId;
 
-    @Column(name = "journal_name")
-    String journalName;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
+    @Column(name = "conference_id")
+    int conferenceId;
 
-    @Column(name = "journal_url")
-    String journalUrl;
+    @Column(name = "group_name")
+    String groupName;
 
-    @Column(name = "ccf_rank")
-    String ccfRank;
 
-    @Column(name = "impact_factor")
-    String impactFactor;
-
-    @Column(name = "publisher")
-    String publisher;
-
-    @Column(name = "issn")
-    String issn;
-
-    @Column(name = "submission_information")
-    String submissionInformation;
-
-    @Column(name = "special_issue")
-    String specialIssue;
 }
