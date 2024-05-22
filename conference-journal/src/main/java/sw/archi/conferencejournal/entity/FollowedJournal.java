@@ -1,4 +1,4 @@
-  package sw.archi.conferencejournal.entity;
+package sw.archi.conferencejournal.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -28,5 +28,4 @@ public class FollowedJournal {
 
     @Column(name = "user_id", nullable = false)
     int userId;
-
 }

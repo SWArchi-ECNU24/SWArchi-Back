@@ -28,6 +28,4 @@ public class Group {
 
     @Column(name = "group_name")
     String groupName;
-
-
 }

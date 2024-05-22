@@ -1,4 +1,4 @@
-  package sw.archi.conferencejournal.entity;
+package sw.archi.conferencejournal.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
