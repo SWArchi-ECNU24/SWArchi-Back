@@ -13,20 +13,19 @@ import sw.archi.commonutils.helper.DataHelper;
 public class GeneralService {
 
     @Autowired
-    private UserRepository userRepository;
+    public UserRepository userRepository;
 
     public JSONObject getDataById(String tableName, int id) throws Exception {
         Class<?> dataDaoClass = Class.forName(
                 DataHelper.generateClassName(
                         SWConstants.projectPackageName,
-                        SWConstants.confjourModulePackageName,
+                        SWConstants.authModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
-        Method findByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findByIdMethodName);
+        Method findByIdMethod = dataDaoClass.getMethod(SWConstants.findByIdMethodName, Object.class);
 
         return DataHelper.getResultResponse(
                 this.getClass().getDeclaredFields(), dataDaoClass, findByIdMethod, this, id);
@@ -36,14 +35,13 @@ public class GeneralService {
         Class<?> dataDaoClass = Class.forName(
                 DataHelper.generateClassName(
                         SWConstants.projectPackageName,
-                        SWConstants.confjourModulePackageName,
+                        SWConstants.authModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
-        Method findAllMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findAllMethodName);
+        Method findAllMethod = dataDaoClass.getMethod(SWConstants.findAllMethodName);
 
         return DataHelper.getResultResponse(
                 this.getClass().getDeclaredFields(), dataDaoClass, findAllMethod, this, null);
@@ -53,16 +51,15 @@ public class GeneralService {
         Class<?> dataDaoClass = Class.forName(
                 DataHelper.generateClassName(
                         SWConstants.projectPackageName,
-                        SWConstants.confjourModulePackageName,
+                        SWConstants.authModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
-        Method findByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findByIdMethodName);
+        Method findByIdMethod = dataDaoClass.getMethod(SWConstants.findByIdMethodName, Object.class);
 
-        Method deleteByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.deleteByIdMethodName);
+        Method deleteByIdMethod = dataDaoClass.getMethod(SWConstants.deleteByIdMethodName, Object.class);
 
         return DataHelper.deleteResultResponse(
                 this.getClass().getDeclaredFields(), dataDaoClass, findByIdMethod, deleteByIdMethod, this, id);
@@ -72,31 +69,30 @@ public class GeneralService {
         Class<?> dataDaoClass = Class.forName(
                 DataHelper.generateClassName(
                         SWConstants.projectPackageName,
-                        SWConstants.confjourModulePackageName,
+                        SWConstants.authModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
         Class<?> dataEntityClass = Class.forName(
                 DataHelper.generateClassName(
                         SWConstants.projectPackageName,
-                        SWConstants.confjourModulePackageName,
+                        SWConstants.authModulePackageName,
                         SWConstants.entityClassPackageName,
                         tableName),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
         if (Objects.equals(id, null)) {
-            Method addMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.addMethodName);
+            Method addMethod = dataDaoClass.getMethod(SWConstants.addMethodName, Object.class);
 
             return DataHelper.addResultResponse(
                     this.getClass().getDeclaredFields(), dataDaoClass, addMethod, this, dataEntityClass, value);
         } else {
-            Method findByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findByIdMethodName);
+            Method findByIdMethod = dataDaoClass.getMethod(SWConstants.findByIdMethodName, Object.class);
 
-            Method updateMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.updateMethodName);
+            Method updateMethod = dataDaoClass.getMethod(SWConstants.addMethodName, Object.class);
 
             return DataHelper.updateResultResponse(
                     this.getClass().getDeclaredFields(),

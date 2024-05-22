@@ -22,34 +22,34 @@ import sw.archi.conferencejournal.dao.UserFollowersRepository;
 public class GeneralService {
 
     @Autowired
-    private ConferenceCfpRepository conferenceCfpRepository;
+    public ConferenceCfpRepository conferenceCfpRepository;
 
     @Autowired
-    private ConferenceRepository conferenceRepository;
+    public ConferenceRepository conferenceRepository;
 
     @Autowired
-    private FollowedConferenceRepository followedConferenceRepository;
+    public FollowedConferenceRepository followedConferenceRepository;
 
     @Autowired
-    private FollowedJournalRepository followedJournalRepository;
+    public FollowedJournalRepository followedJournalRepository;
 
     @Autowired
-    private GroupRepository groupRepository;
+    public GroupRepository groupRepository;
 
     @Autowired
-    private GroupUserRepository groupUserRepository;
+    public GroupUserRepository groupUserRepository;
 
     @Autowired
-    private JournalCfpRepository journalCfpRepository;
+    public JournalCfpRepository journalCfpRepository;
 
     @Autowired
-    private JournalIssueRepository journalIssueRepository;
+    public JournalIssueRepository journalIssueRepository;
 
     @Autowired
-    private JournalRepository journalRepository;
+    public JournalRepository journalRepository;
 
     @Autowired
-    private UserFollowersRepository userFollowersRepository;
+    public UserFollowersRepository userFollowersRepository;
 
     public JSONObject getDataById(String tableName, int id) throws Exception {
         Class<?> dataDaoClass = Class.forName(
@@ -57,12 +57,11 @@ public class GeneralService {
                         SWConstants.projectPackageName,
                         SWConstants.confjourModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
-        Method findByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findByIdMethodName);
+        Method findByIdMethod = dataDaoClass.getMethod(SWConstants.findByIdMethodName, Object.class);
 
         return DataHelper.getResultResponse(
                 this.getClass().getDeclaredFields(), dataDaoClass, findByIdMethod, this, id);
@@ -74,12 +73,11 @@ public class GeneralService {
                         SWConstants.projectPackageName,
                         SWConstants.confjourModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
-        Method findAllMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findAllMethodName);
+        Method findAllMethod = dataDaoClass.getMethod(SWConstants.findAllMethodName);
 
         return DataHelper.getResultResponse(
                 this.getClass().getDeclaredFields(), dataDaoClass, findAllMethod, this, null);
@@ -91,14 +89,13 @@ public class GeneralService {
                         SWConstants.projectPackageName,
                         SWConstants.confjourModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
-        Method findByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findByIdMethodName);
+        Method findByIdMethod = dataDaoClass.getMethod(SWConstants.findByIdMethodName, Object.class);
 
-        Method deleteByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.deleteByIdMethodName);
+        Method deleteByIdMethod = dataDaoClass.getMethod(SWConstants.deleteByIdMethodName, Object.class);
 
         return DataHelper.deleteResultResponse(
                 this.getClass().getDeclaredFields(), dataDaoClass, findByIdMethod, deleteByIdMethod, this, id);
@@ -110,8 +107,7 @@ public class GeneralService {
                         SWConstants.projectPackageName,
                         SWConstants.confjourModulePackageName,
                         SWConstants.daoClassPackageName,
-                        tableName,
-                        SWConstants.daoClassSuffix),
+                        tableName + SWConstants.daoClassSuffix),
                 true,
                 Thread.currentThread().getContextClassLoader().getParent());
 
@@ -125,14 +121,14 @@ public class GeneralService {
                 Thread.currentThread().getContextClassLoader().getParent());
 
         if (Objects.equals(id, null)) {
-            Method addMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.addMethodName);
+            Method addMethod = dataDaoClass.getMethod(SWConstants.addMethodName, Object.class);
 
             return DataHelper.addResultResponse(
                     this.getClass().getDeclaredFields(), dataDaoClass, addMethod, this, dataEntityClass, value);
         } else {
-            Method findByIdMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.findByIdMethodName);
+            Method findByIdMethod = dataDaoClass.getMethod(SWConstants.findByIdMethodName, Object.class);
 
-            Method updateMethod = DataHelper.getTargetMethod(dataDaoClass, SWConstants.updateMethodName);
+            Method updateMethod = dataDaoClass.getMethod(SWConstants.addMethodName, Object.class);
 
             return DataHelper.updateResultResponse(
                     this.getClass().getDeclaredFields(),

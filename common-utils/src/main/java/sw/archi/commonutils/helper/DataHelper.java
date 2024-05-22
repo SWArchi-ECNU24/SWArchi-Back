@@ -102,14 +102,16 @@ public class DataHelper {
             throws Exception {
         for (Field field : fieldRange) {
             if (Objects.equals(field.getType().getName(), targetClass.getName())) {
-                Optional<?> getRes = Objects.equals(param, null)
-                        ? (Optional<?>) getMethod.invoke(field.get(targetObject))
-                        : (Optional<?>) getMethod.invoke(field.get(targetObject), param);
 
-                if (getRes.isEmpty()) {
-                    return ResponseHelper.constructResponse(false, ResponseHelper.requestErrorCode, null);
+                if (Objects.equals(param, null)) {
+                    return ResponseHelper.constructSuccessListResponse(getMethod.invoke(field.get(targetObject)));
                 } else {
-                    return ResponseHelper.constructResponse(true, null, getRes.get());
+                    Optional<?> getRes = (Optional<?>) getMethod.invoke(field.get(targetObject), param);
+                    if (getRes.isEmpty()) {
+                        return ResponseHelper.constructResponse(false, ResponseHelper.requestErrorCode, null);
+                    } else {
+                        return ResponseHelper.constructResponse(true, null, getRes.get());
+                    }
                 }
             }
         }
@@ -142,7 +144,7 @@ public class DataHelper {
                 } else {
                     deleteMethod.invoke(field.get(targetObject), param);
 
-                    return ResponseHelper.constructSuccessResponse(getRes.get());
+                    return ResponseHelper.constructResponse(true, null, getRes.get());
                 }
             }
         }
@@ -171,7 +173,7 @@ public class DataHelper {
                 Object entity = JSON.toJavaObject(value, entityClass);
                 Optional<?> addRes = (Optional<?>) addMethod.invoke(field.get(targetObject), entity);
 
-                return ResponseHelper.constructSuccessResponse(addRes.get());
+                return ResponseHelper.constructResponse(true, null, addRes.get());
             }
         }
 
@@ -208,7 +210,7 @@ public class DataHelper {
                     Object entity = JSON.toJavaObject(value, entityClass);
                     Optional<?> updateRes = (Optional<?>) updateMethod.invoke(field.get(targetObject), entity);
 
-                    return ResponseHelper.constructSuccessResponse(updateRes.get());
+                    return ResponseHelper.constructResponse(true, null, updateRes.get());
                 }
             }
         }
