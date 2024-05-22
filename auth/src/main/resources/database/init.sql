@@ -11,7 +11,7 @@
  Target Server Version : 80037 (8.0.37)
  File Encoding         : 65001
 
- Date: 20/05/2024 12:32:51
+ Date: 21/05/2024 23:08:58
 */
 SET
 NAMES utf8mb4;
@@ -50,7 +50,7 @@ CREATE
             signup_date datetime NULL DEFAULT NULL,
             PRIMARY KEY(user_id)
                 USING BTREE
-        ) ENGINE = InnoDB CHARACTER
+        ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER
     SET
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 SET

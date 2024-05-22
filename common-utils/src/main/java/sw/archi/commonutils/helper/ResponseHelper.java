@@ -11,7 +11,14 @@ public class ResponseHelper {
 
     public static int successCode = 200;
 
-    public static JSONObject constructSuccessResponse(Object object) {
+    public static JSONObject constructSuccessListResponse(Object object) {
+        JSONObject res = new JSONObject();
+        res.put(SWConstants.code, ResponseHelper.successCode);
+        res.put(SWConstants.data, JSONObject.parseArray(JSON.toJSONString(object)));
+        return res;
+    }
+
+    public static JSONObject constructSuccessObjectResponse(Object object) {
         JSONObject res = new JSONObject();
         res.put(SWConstants.code, ResponseHelper.successCode);
         res.put(SWConstants.data, JSONObject.parseObject(JSON.toJSONString(object)));
@@ -27,9 +34,9 @@ public class ResponseHelper {
 
     public static JSONObject constructResponse(Boolean isSuccess, Integer code, Object object) {
         if (isSuccess) {
-            return constructSuccessResponse(object);
+            return constructSuccessObjectResponse(object);
         } else {
-            return constructSuccessResponse(code);
+            return constructFailedResponse(code);
         }
     }
 }
