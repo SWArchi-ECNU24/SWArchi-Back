@@ -24,7 +24,7 @@ public class GroupUser {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "group_id", referencedColumnName = "group_id")
     @Column(name = "group_id", nullable = false)
-    int conferenceId;
+    Conference conferenceId;
 
     @Column(name = "user_id", nullable = false)
     int userId;

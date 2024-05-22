@@ -11,7 +11,9 @@ import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
+import java.util.Date;
+
+  @Getter
 @Setter
 @Entity
 public class ConferenceCfp {
@@ -24,7 +26,7 @@ public class ConferenceCfp {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
     @Column(name = "conference_id", nullable = false)
-    int conferenceId;
+    Conference conferenceId;
 
     @Column(name = "user_id", nullable = false)
     int userId;

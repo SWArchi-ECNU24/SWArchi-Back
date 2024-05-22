@@ -24,7 +24,7 @@ public class JournalIssue {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "journal_id", referencedColumnName = "journal_id")
     @Column(name = "journal_id", nullable = false)
-    int conferenceId;
+    Conference conferenceId;
 
     @Column(name = "user_id", nullable = false)
     int userId;

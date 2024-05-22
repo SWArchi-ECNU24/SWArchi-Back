@@ -1,6 +1,5 @@
 package sw.archi.auth.entity;
 
-<<<<<<< HEAD
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +10,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Getter
 @Setter
@@ -35,12 +36,8 @@ public class User {
     String email;
 
     @Column(name = "institution")
-    String authority;
+    String institution;
 
     @Column(name = "signup_date")
-    Date authority;
+    Date signupDate;
 }
-=======
-public class User {
-}
->>>>>>> 4cad37abb387eb21150ec5262e461568451e39e9
