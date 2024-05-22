@@ -3,12 +3,53 @@ package sw.archi.conferencejournal.service;
 import com.alibaba.fastjson.JSONObject;
 import java.lang.reflect.Method;
 import java.util.Objects;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sw.archi.commonutils.constants.SWConstants;
 import sw.archi.commonutils.helper.DataHelper;
+import sw.archi.conferencejournal.dao.ConferenceCfpRepository;
+import sw.archi.conferencejournal.dao.ConferenceRepository;
+import sw.archi.conferencejournal.dao.FollowedConferenceRepository;
+import sw.archi.conferencejournal.dao.FollowedJournalRepository;
+import sw.archi.conferencejournal.dao.GroupRepository;
+import sw.archi.conferencejournal.dao.GroupUserRepository;
+import sw.archi.conferencejournal.dao.JournalCfpRepository;
+import sw.archi.conferencejournal.dao.JournalIssueRepository;
+import sw.archi.conferencejournal.dao.JournalRepository;
+import sw.archi.conferencejournal.dao.UserFollowersRepository;
 
 @Service
 public class GeneralService {
+
+    @Autowired
+    private ConferenceCfpRepository conferenceCfpRepository;
+
+    @Autowired
+    private ConferenceRepository conferenceRepository;
+
+    @Autowired
+    private FollowedConferenceRepository followedConferenceRepository;
+
+    @Autowired
+    private FollowedJournalRepository followedJournalRepository;
+
+    @Autowired
+    private GroupRepository groupRepository;
+
+    @Autowired
+    private GroupUserRepository groupUserRepository;
+
+    @Autowired
+    private JournalCfpRepository journalCfpRepository;
+
+    @Autowired
+    private JournalIssueRepository journalIssueRepository;
+
+    @Autowired
+    private JournalRepository journalRepository;
+
+    @Autowired
+    private UserFollowersRepository userFollowersRepository;
 
     public JSONObject getDataById(String tableName, int id) throws Exception {
         Class<?> dataDaoClass = Class.forName(

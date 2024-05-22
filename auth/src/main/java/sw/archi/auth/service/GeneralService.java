@@ -3,12 +3,17 @@ package sw.archi.auth.service;
 import com.alibaba.fastjson.JSONObject;
 import java.lang.reflect.Method;
 import java.util.Objects;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sw.archi.auth.dao.UserRepository;
 import sw.archi.commonutils.constants.SWConstants;
 import sw.archi.commonutils.helper.DataHelper;
 
 @Service
 public class GeneralService {
+
+    @Autowired
+    private UserRepository userRepository;
 
     public JSONObject getDataById(String tableName, int id) throws Exception {
         Class<?> dataDaoClass = Class.forName(
