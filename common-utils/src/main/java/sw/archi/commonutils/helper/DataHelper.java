@@ -171,9 +171,8 @@ public class DataHelper {
         for (Field field : fieldRange) {
             if (Objects.equals(field.getType().getName(), targetClass.getName())) {
                 Object entity = JSON.toJavaObject(value, entityClass);
-                Optional<?> addRes = (Optional<?>) addMethod.invoke(field.get(targetObject), entity);
 
-                return ResponseHelper.constructResponse(true, null, addRes.get());
+                return ResponseHelper.constructResponse(true, null, addMethod.invoke(field.get(targetObject), entity));
             }
         }
 
@@ -208,9 +207,9 @@ public class DataHelper {
                     return ResponseHelper.constructResponse(false, ResponseHelper.requestErrorCode, null);
                 } else {
                     Object entity = JSON.toJavaObject(value, entityClass);
-                    Optional<?> updateRes = (Optional<?>) updateMethod.invoke(field.get(targetObject), entity);
 
-                    return ResponseHelper.constructResponse(true, null, updateRes.get());
+                    return ResponseHelper.constructResponse(
+                            true, null, updateMethod.invoke(field.get(targetObject), entity));
                 }
             }
         }
