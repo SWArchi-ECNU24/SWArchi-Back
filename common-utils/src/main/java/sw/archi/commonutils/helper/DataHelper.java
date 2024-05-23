@@ -1,6 +1,7 @@
 package sw.archi.commonutils.helper;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
@@ -9,10 +10,12 @@ import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import sw.archi.commonutils.constants.SWConstants;
+import sw.archi.commonutils.struct.KeyTriple;
 
 public class DataHelper {
     /**
@@ -215,5 +218,31 @@ public class DataHelper {
         }
 
         return ResponseHelper.constructResponse(false, ResponseHelper.requestErrorCode, null);
+    }
+
+    public static JSONArray filterEqualKeys(JSONArray origin, KeyTriple... keys) {
+        return JSON.parseArray(JSON.toJSONString(origin.toJavaList(JSONObject.class).stream()
+                .filter(singleton -> {
+                    boolean flag = true;
+                    for (KeyTriple key : keys) {
+                        flag &= Objects.equals(
+                                singleton.getObject(key.getKeyName(), key.getClassName()),
+                                key.getClassName().cast(key.getKeyValue()));
+                    }
+                    return flag;
+                })
+                .collect(Collectors.toList())));
+    }
+
+    public static JSONArray filterKeyWords(JSONArray origin, Map<String, String> keys) {
+        return JSON.parseArray(JSON.toJSONString(origin.toJavaList(JSONObject.class).stream()
+                .filter(singleton -> {
+                    boolean flag = true;
+                    for (Map.Entry<String, String> key : keys.entrySet()) {
+                        flag &= DataHelper.softIncludes(key.getValue(), singleton.getString(key.getKey()));
+                    }
+                    return flag;
+                })
+                .collect(Collectors.toList())));
     }
 }
