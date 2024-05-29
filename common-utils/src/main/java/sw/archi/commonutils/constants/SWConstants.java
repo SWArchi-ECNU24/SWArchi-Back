@@ -31,4 +31,12 @@ public class SWConstants {
     public static String addMethodName = "saveAndFlush";
 
     public static String updateMethodName = "saveAndFlush";
+
+    public static String tableName = "tableName";
+
+    public static String id = "id";
+
+    public static final String authModuleName = "auth";
+    
+    public static final String confjourModuleName = "confjour";
 }
