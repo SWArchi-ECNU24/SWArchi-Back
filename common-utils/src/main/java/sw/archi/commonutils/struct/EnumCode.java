@@ -10,6 +10,8 @@ public enum EnumCode {
 
     REQUEST_ERROR(515, "Request failed"),
 
+    PARAMETER_ERROR(516, "Parameter error"),
+
     INTERNAL_ERROR(500, "Server internal error"),
 
     FILE_EMPTY_ERROR(431, "File empty error"),

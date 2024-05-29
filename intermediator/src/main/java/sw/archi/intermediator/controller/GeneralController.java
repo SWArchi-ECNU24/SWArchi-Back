@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -62,6 +64,37 @@ public class GeneralController {
                         getModuleInfo(moduleName).getValue(),
                         tableName,
                         id)
+                .toResponseEntity();
+    }
+
+    @PostMapping(value = "/{moduleName}/{tableName}")
+    public ResponseEntity<JSONObject> addDataByTable(
+            @Parameter(description = "moduleName") @PathVariable String moduleName,
+            @Parameter(description = "tableName") @PathVariable String tableName,
+            @Parameter(description = "value") @RequestParam JSONObject value) {
+        return generalService
+                .addNUpdateDataById(
+                        getModuleInfo(moduleName).getKey(),
+                        getModuleInfo(moduleName).getValue(),
+                        tableName,
+                        null,
+                        value)
+                .toResponseEntity();
+    }
+
+    @PutMapping(value = "/{moduleName}/{tableName}")
+    public ResponseEntity<JSONObject> updateDataByTableNId(
+            @Parameter(description = "moduleName") @PathVariable String moduleName,
+            @Parameter(description = "Id") @RequestParam int id,
+            @Parameter(description = "tableName") @PathVariable String tableName,
+            @Parameter(description = "value") @RequestParam JSONObject value) {
+        return generalService
+                .addNUpdateDataById(
+                        getModuleInfo(moduleName).getKey(),
+                        getModuleInfo(moduleName).getValue(),
+                        tableName,
+                        id,
+                        value)
                 .toResponseEntity();
     }
 }
