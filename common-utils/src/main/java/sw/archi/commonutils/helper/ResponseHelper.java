@@ -3,13 +3,14 @@ package sw.archi.commonutils.helper;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import sw.archi.commonutils.constants.SWConstants;
+import sw.archi.commonutils.struct.EnumCode;
 
 public class ResponseHelper {
-    public static int requestErrorCode = 515;
+    public static int requestErrorCode = EnumCode.REQUEST_ERROR.getCode();
 
-    public static int authorityErrorCode = 401;
+    public static int authorityErrorCode = EnumCode.AUTHORITY_ERROR.getCode();
 
-    public static int successCode = 200;
+    public static int successCode = EnumCode.SUCCESS.getCode();
 
     public static JSONObject constructSuccessListResponse(Object object) {
         JSONObject res = new JSONObject();
