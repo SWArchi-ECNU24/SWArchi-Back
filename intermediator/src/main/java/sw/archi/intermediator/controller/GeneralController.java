@@ -1,7 +1,9 @@
 package sw.archi.intermediator.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ import sw.archi.intermediator.constants.IMConstants;
 import sw.archi.intermediator.service.GeneralService;
 
 @RestController
+@Tag(name = "中间层模块")
 @CrossOrigin
 @RequestMapping(
         value = "/api",
@@ -39,6 +42,7 @@ public class GeneralController {
         }
     }
 
+    @Operation(summary = "根据Id获取数据接口")
     @GetMapping(value = "/{moduleName}/{tableName}/{id}")
     public ResponseEntity<JSONObject> getDataByTableNId(
             @Parameter(description = "moduleName") @PathVariable String moduleName,
@@ -53,6 +57,7 @@ public class GeneralController {
                 .toResponseEntity();
     }
 
+    @Operation(summary = "根据Id删除数据接口")
     @DeleteMapping(value = "/{moduleName}/{tableName}")
     public ResponseEntity<JSONObject> deleteDataByTableNId(
             @Parameter(description = "moduleName") @PathVariable String moduleName,
@@ -67,6 +72,7 @@ public class GeneralController {
                 .toResponseEntity();
     }
 
+    @Operation(summary = "新增数据接口")
     @PostMapping(value = "/{moduleName}/{tableName}")
     public ResponseEntity<JSONObject> addDataByTable(
             @Parameter(description = "moduleName") @PathVariable String moduleName,
@@ -82,6 +88,7 @@ public class GeneralController {
                 .toResponseEntity();
     }
 
+    @Operation(summary = "根据Id修改数据接口")
     @PutMapping(value = "/{moduleName}/{tableName}")
     public ResponseEntity<JSONObject> updateDataByTableNId(
             @Parameter(description = "moduleName") @PathVariable String moduleName,
