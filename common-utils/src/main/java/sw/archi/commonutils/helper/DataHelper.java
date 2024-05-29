@@ -8,8 +8,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -220,7 +222,7 @@ public class DataHelper {
         return ResponseHelper.constructResponse(false, ResponseHelper.requestErrorCode, null);
     }
 
-    public static JSONArray filterEqualKeys(JSONArray origin, KeyTriple... keys) {
+    public static JSONArray filterEqualKeys(JSONArray origin, List<KeyTriple> keys) {
         return JSON.parseArray(JSON.toJSONString(origin.toJavaList(JSONObject.class).stream()
                 .filter(singleton -> {
                     boolean flag = true;
@@ -244,5 +246,16 @@ public class DataHelper {
                     return flag;
                 })
                 .collect(Collectors.toList())));
+    }
+
+    public static JSONArray filterJSONObjectKeys(JSONObject object, JSONArray origin, Map<String, Class<?>> keyNames) {
+        List<KeyTriple> keys = new ArrayList<>();
+
+        keyNames.forEach((keyName, className) -> {
+            KeyTriple singleton = new KeyTriple(keyName, className, object.getObject(keyName, className));
+            keys.add(singleton);
+        });
+
+        return filterEqualKeys(origin, keys);
     }
 }
