@@ -1,9 +1,11 @@
 package sw.archi.intermediator.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import java.net.URLDecoder;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -77,14 +79,15 @@ public class GeneralController {
     public ResponseEntity<JSONObject> addDataByTable(
             @Parameter(description = "moduleName") @PathVariable String moduleName,
             @Parameter(description = "tableName") @PathVariable String tableName,
-            @Parameter(description = "value") @RequestParam JSONObject value) {
+            @Parameter(description = "value") @RequestParam String value)
+            throws Exception {
         return generalService
                 .addNUpdateDataById(
                         getModuleInfo(moduleName).getKey(),
                         getModuleInfo(moduleName).getValue(),
                         tableName,
                         null,
-                        value)
+                        JSON.parseObject(URLDecoder.decode(value, SWConstants.UTF8)))
                 .toResponseEntity();
     }
 
@@ -94,14 +97,15 @@ public class GeneralController {
             @Parameter(description = "moduleName") @PathVariable String moduleName,
             @Parameter(description = "Id") @RequestParam int id,
             @Parameter(description = "tableName") @PathVariable String tableName,
-            @Parameter(description = "value") @RequestParam JSONObject value) {
+            @Parameter(description = "value") @RequestParam String value)
+            throws Exception {
         return generalService
                 .addNUpdateDataById(
                         getModuleInfo(moduleName).getKey(),
                         getModuleInfo(moduleName).getValue(),
                         tableName,
                         id,
-                        value)
+                        JSON.parseObject(URLDecoder.decode(value, SWConstants.UTF8)))
                 .toResponseEntity();
     }
 }

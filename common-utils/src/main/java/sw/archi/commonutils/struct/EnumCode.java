@@ -32,8 +32,14 @@ public enum EnumCode {
                 return EnumCode.SUCCESS;
             case 401:
                 return EnumCode.AUTHORITY_ERROR;
+            case 430:
+                return EnumCode.FILE_TRANSFER_ERROR;
+            case 431:
+                return EnumCode.FILE_EMPTY_ERROR;
             case 515:
                 return EnumCode.REQUEST_ERROR;
+            case 516:
+                return EnumCode.PARAMETER_ERROR;
             default:
                 return EnumCode.INTERNAL_ERROR;
         }
