@@ -8,6 +8,8 @@ public class SWConstants {
 
     public static String data = "data";
 
+    public static String message = "message";
+
     public static String projectPackageName = "sw.archi";
 
     public static String authModulePackageName = "auth";

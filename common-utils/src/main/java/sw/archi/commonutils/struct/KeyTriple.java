@@ -1,5 +1,10 @@
 package sw.archi.commonutils.struct;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class KeyTriple {
 
     private String keyName;
@@ -12,17 +17,5 @@ public class KeyTriple {
         this.keyName = keyName;
         this.className = className;
         this.keyValue = keyValue;
-    }
-
-    public String getKeyName() {
-        return this.keyName;
-    }
-
-    public Class<?> getClassName() {
-        return this.className;
-    }
-
-    public Object getKeyValue() {
-        return this.keyValue;
     }
 }
