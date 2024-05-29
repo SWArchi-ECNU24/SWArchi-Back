@@ -14,19 +14,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class GroupUser {
+public class UserFollowers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "gu_id", nullable = false)
-    int guId;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_id", referencedColumnName = "group_id")
-    @Column(name = "group_id", nullable = false)
-    Conference conferenceId;
+    @Column(name = "uf_id", nullable = false)
+    int ufId;
 
     @Column(name = "user_id", nullable = false)
     int userId;
+
+    @Column(name = "followers_id", nullable = false)
+    int followersId;
 
 }
