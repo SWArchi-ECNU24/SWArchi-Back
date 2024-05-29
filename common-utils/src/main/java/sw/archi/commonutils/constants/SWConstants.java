@@ -37,6 +37,6 @@ public class SWConstants {
     public static String id = "id";
 
     public static final String authModuleName = "auth";
-    
+
     public static final String confjourModuleName = "confjour";
 }
