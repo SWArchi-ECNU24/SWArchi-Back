@@ -13,7 +13,7 @@ public class KeyTriple {
 
     private Object keyValue;
 
-    KeyTriple(String keyName, Class<?> className, Object keyValue) {
+    public KeyTriple(String keyName, Class<?> className, Object keyValue) {
         this.keyName = keyName;
         this.className = className;
         this.keyValue = keyValue;
