@@ -22,9 +22,9 @@ public class FollowedJournal {
     int followedId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
-    @Column(name = "conference_id", nullable = false)
-    Conference conferenceId;
+    @JoinColumn(name = "journal_id", referencedColumnName = "journal_id")
+    @Column(name = "journal_id", nullable = false)
+    Conference journalId;
 
     @Column(name = "user_id", nullable = false)
     int userId;

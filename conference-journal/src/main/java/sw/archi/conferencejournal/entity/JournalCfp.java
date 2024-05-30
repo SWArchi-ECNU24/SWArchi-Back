@@ -24,34 +24,10 @@ public class JournalCfp {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "journal_id", referencedColumnName = "journal_id")
     @Column(name = "journal_id", nullable = false)
-    Conference conferenceId;
-
-    @Column(name = "user_id", nullable = false)
-    int userId;
-
-    @Column(name = "journal_name")
-    String journalName;
-
-    @Column(name = "journal_url")
-    String journalUrl;
-
-    @Column(name = "ccf_rank")
-    String ccfRank;
-
-    @Column(name = "impact_factor")
-    String impactFactor;
-
-    @Column(name = "publisher")
-    String publisher;
-
-    @Column(name = "issn")
-    String issn;
+    Journal journalId;
 
     @Column(name = "submission_information")
     String submissionInformation;
-
-    @Column(name = "special_issue")
-    String specialIssue;
 
     @Column(name = "is_approved")
     String isApproved;

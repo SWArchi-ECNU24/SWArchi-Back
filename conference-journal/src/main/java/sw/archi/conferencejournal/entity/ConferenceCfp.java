@@ -28,35 +28,11 @@ public class ConferenceCfp {
     @Column(name = "conference_id", nullable = false)
     Conference conferenceId;
 
-    @Column(name = "user_id", nullable = false)
-    int userId;
-
-    @Column(name = "conference_name")
-    String conferenceName;
-
-    @Column(name = "conference_url")
-    String conferenceUrl;
-
-    @Column(name = "ccf_rank")
-    String ccfRank;
-
-    @Column(name = "delay")
-    String delay;
-
     @Column(name = "submission_deadline")
     String submissionDeadline;
 
     @Column(name = "notification_date")
     Date notificationDate;
-
-    @Column(name = "conference_date")
-    Date conferenceDate;
-
-    @Column(name = "conference_location")
-    String conferenceLocation;
-
-    @Column(name = "session_number")
-    int sessionNumber;
 
     @Column(name = "submission_information")
     String submissionInformation;
