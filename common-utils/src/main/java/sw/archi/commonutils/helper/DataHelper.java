@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -257,5 +258,15 @@ public class DataHelper {
         });
 
         return filterEqualKeys(origin, keys);
+    }
+
+    public static JSONArray filterJSONObjectKeywords(JSONArray origin, JSONObject queryObject) {
+        Map<String, String> keys = new HashMap<>();
+
+        for (Map.Entry<String, Object> singleton : queryObject.entrySet()) {
+            keys.put(singleton.getKey(), String.valueOf(singleton.getValue()));
+        }
+
+        return filterKeyWords(origin, keys);
     }
 }
