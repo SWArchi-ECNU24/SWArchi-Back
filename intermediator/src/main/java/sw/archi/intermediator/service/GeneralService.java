@@ -40,6 +40,12 @@ public class GeneralService {
                 restTemplate.getForObject(uriBuilder.toUriString(), JSONObject.class));
     }
 
+    public HttpDataHelper<JSONArray> getData(
+            String baseUrl, String moduleName, String tableName, JSONObject queryObject) {
+        return HttpDataHelper.success(DataHelper.filterJSONObjectKeywords(
+                getAllData(baseUrl, moduleName, tableName).getJSONArray(SWConstants.data), queryObject));
+    }
+
     public HttpDataHelper<JSONObject> deleteDataById(String baseUrl, String moduleName, String tableName, int id) {
         String api = "api/" + moduleName + "/delete";
 

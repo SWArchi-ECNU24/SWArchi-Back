@@ -59,6 +59,22 @@ public class GeneralController {
                 .toResponseEntity();
     }
 
+    @Operation(summary = "获取数据接口")
+    @GetMapping(value = "/{moduleName}/{tableName}/fuzzy/{keywords}")
+    public ResponseEntity<JSONObject> getDataByTable(
+            @Parameter(description = "moduleName") @PathVariable String moduleName,
+            @Parameter(description = "keywords") @PathVariable String keywords,
+            @Parameter(description = "tableName") @PathVariable String tableName)
+            throws Exception {
+        return generalService
+                .getData(
+                        getModuleInfo(moduleName).getKey(),
+                        getModuleInfo(moduleName).getValue(),
+                        tableName,
+                        JSON.parseObject(URLDecoder.decode(keywords, SWConstants.UTF8)))
+                .toResponseEntity();
+    }
+
     @Operation(summary = "根据Id删除数据接口")
     @DeleteMapping(value = "/{moduleName}/{tableName}")
     public ResponseEntity<JSONObject> deleteDataByTableNId(
