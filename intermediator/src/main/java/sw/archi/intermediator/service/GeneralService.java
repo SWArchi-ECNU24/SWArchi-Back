@@ -65,7 +65,12 @@ public class GeneralService {
                 getAllData(baseUrl, moduleName, tableName).getJSONArray(SWConstants.data),
                 FilterHelper.generateKeyNames(moduleName, tableName));
 
-        if (!filterRes.isEmpty()) {
+        if (!(filterRes.isEmpty()
+                || (filterRes.size() == 1
+                        && !Objects.equals(id, null)
+                        && Objects.equals(
+                                FilterHelper.getTableId(filterRes.getJSONObject(0)),
+                                FilterHelper.getTableId(value))))) {
             return HttpDataHelper.error(EnumCode.getEnumCodeType(EnumCode.PARAMETER_ERROR.getCode()));
         }
 
