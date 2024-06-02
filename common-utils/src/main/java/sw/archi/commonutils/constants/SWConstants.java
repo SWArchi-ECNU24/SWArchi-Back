@@ -38,6 +38,8 @@ public class SWConstants {
 
     public static String value = "value";
 
+    public static String idSuffix = "Id";
+
     public static final String authModuleName = "auth";
 
     public static final String confjourModuleName = "confjour";
