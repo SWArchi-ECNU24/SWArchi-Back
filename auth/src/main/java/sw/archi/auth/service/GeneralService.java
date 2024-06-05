@@ -3,6 +3,7 @@ package sw.archi.auth.service;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sw.archi.auth.dao.UserFollowersRepository;
 import sw.archi.auth.dao.UserRepository;
 import sw.archi.commonutils.constants.SWConstants;
 import sw.archi.commonutils.helper.GeneralServiceHelper;
@@ -12,6 +13,9 @@ public class GeneralService {
 
     @Autowired
     public UserRepository userRepository;
+
+    @Autowired
+    public UserFollowersRepository userFollowersRepository;
 
     public JSONObject getDataById(String tableName, int id) throws Exception {
         return GeneralServiceHelper.getDataById(tableName, id, SWConstants.authModulePackageName, this);

@@ -31,6 +31,4 @@ public class Group {
 
     @Column(name = "user_id")
     String userId;
-
-
 }
