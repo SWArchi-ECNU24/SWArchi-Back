@@ -121,7 +121,7 @@ public class GeneralService {
                                     IMConstants.confjourModuleBaseUrl,
                                     SWConstants.confjourModuleName,
                                     SWConstants.conferenceTableName,
-                                    obj.getIntValue(SWConstants.conferenceId));
+                                    FilterHelper.getTableId(obj.getJSONObject(SWConstants.conferenceId)));
                 case SWConstants.followedJournalTableName:
                     return checkId(
                                     IMConstants.authModuleBaseUrl,
@@ -132,25 +132,25 @@ public class GeneralService {
                                     IMConstants.confjourModuleBaseUrl,
                                     SWConstants.confjourModuleName,
                                     SWConstants.journalTableName,
-                                    obj.getIntValue(SWConstants.journalId));
+                                    FilterHelper.getTableId(obj.getJSONObject(SWConstants.journalId)));
                 case SWConstants.conferenceCfpTableName:
                     return checkId(
                             IMConstants.confjourModuleBaseUrl,
                             SWConstants.confjourModuleName,
                             SWConstants.conferenceTableName,
-                            obj.getIntValue(SWConstants.conferenceId));
+                            FilterHelper.getTableId(obj.getJSONObject(SWConstants.conferenceId)));
                 case SWConstants.journalCfpTableName:
                     return checkId(
                             IMConstants.confjourModuleBaseUrl,
                             SWConstants.confjourModuleName,
                             SWConstants.journalTableName,
-                            obj.getIntValue(SWConstants.journalId));
+                            FilterHelper.getTableId(obj.getJSONObject(SWConstants.journalId)));
                 case SWConstants.journalIssueTableName:
                     return checkId(
                             IMConstants.confjourModuleBaseUrl,
                             SWConstants.confjourModuleName,
                             SWConstants.journalTableName,
-                            obj.getIntValue(SWConstants.journalId));
+                            FilterHelper.getTableId(obj.getJSONObject(SWConstants.journalId)));
                 case SWConstants.conferenceGroupTableName:
                     Boolean flag = true;
                     for (String id : obj.getString(SWConstants.userId).split(",")) {
