@@ -1,10 +1,6 @@
-package sw.archi.conferencejournal.entity;
+package sw.archi.auth.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,6 +17,6 @@ public class UserFollowers {
     @Column(name = "user_id", nullable = false)
     int userId;
 
-    @Column(name = "followers_id", nullable = false)
+    @Column(name = "follow_id", nullable = false)
     int followersId;
 }

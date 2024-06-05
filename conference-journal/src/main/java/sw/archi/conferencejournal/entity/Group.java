@@ -28,4 +28,7 @@ public class Group {
 
     @Column(name = "group_name")
     String groupName;
+
+    @Column(name = "user_id")
+    String userId;
 }

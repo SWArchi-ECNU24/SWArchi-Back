@@ -10,11 +10,9 @@ import sw.archi.conferencejournal.dao.ConferenceRepository;
 import sw.archi.conferencejournal.dao.FollowedConferenceRepository;
 import sw.archi.conferencejournal.dao.FollowedJournalRepository;
 import sw.archi.conferencejournal.dao.GroupRepository;
-import sw.archi.conferencejournal.dao.GroupUserRepository;
 import sw.archi.conferencejournal.dao.JournalCfpRepository;
 import sw.archi.conferencejournal.dao.JournalIssueRepository;
 import sw.archi.conferencejournal.dao.JournalRepository;
-import sw.archi.conferencejournal.dao.UserFollowersRepository;
 
 @Service
 public class GeneralService {
@@ -35,9 +33,6 @@ public class GeneralService {
     public GroupRepository groupRepository;
 
     @Autowired
-    public GroupUserRepository groupUserRepository;
-
-    @Autowired
     public JournalCfpRepository journalCfpRepository;
 
     @Autowired
@@ -45,9 +40,6 @@ public class GeneralService {
 
     @Autowired
     public JournalRepository journalRepository;
-
-    @Autowired
-    public UserFollowersRepository userFollowersRepository;
 
     public JSONObject getDataById(String tableName, int id) throws Exception {
         return GeneralServiceHelper.getDataById(tableName, id, SWConstants.confjourModulePackageName, this);
