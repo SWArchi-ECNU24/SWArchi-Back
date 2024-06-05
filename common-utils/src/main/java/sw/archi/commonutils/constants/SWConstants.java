@@ -46,11 +46,31 @@ public class SWConstants {
 
     public static final String userTableName = "User";
 
+    public static final String userId = "userId";
+
+    public static final String followId = "followId";
+
+    public static final String conferenceId = "conferenceId";
+
+    public static final String journalId = "journalId";
+
     public static final String conferenceTableName = "Conference";
 
     public static final String journalTableName = "Journal";
 
-    public static final String groupTableName = "Group";
+    public static final String userFollowersTableName = "UserFollowers";
+
+    public static final String followedConferenceTableName = "FollowedConference";
+
+    public static final String followedJournalTableName = "FollowedJournal";
+
+    public static final String conferenceCfpTableName = "ConferenceCfp";
+
+    public static final String journalCfpTableName = "JournalCfp";
+
+    public static final String journalIssueTableName = "JournalIssue";
+
+    public static final String conferenceGroupTableName = "ConferenceGroup";
 
     public static String userEmail = "email";
 

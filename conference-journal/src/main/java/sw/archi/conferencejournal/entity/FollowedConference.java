@@ -23,7 +23,6 @@ public class FollowedConference {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
-    @Column(name = "conference_id", nullable = false)
     Conference conferenceId;
 
     @Column(name = "user_id", nullable = false)

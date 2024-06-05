@@ -23,8 +23,7 @@ public class FollowedJournal {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "journal_id", referencedColumnName = "journal_id")
-    @Column(name = "journal_id", nullable = false)
-    Conference journalId;
+    Journal journalId;
 
     @Column(name = "user_id", nullable = false)
     int userId;
