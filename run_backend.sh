@@ -51,7 +51,7 @@ startdocker(){
         printf -- "- eureka:                  ${BLUE}http://localhost:8085${ENDCOLOR}\n"
         printf -- "- auth:                   ${BLUE}http://localhost:8086${ENDCOLOR}\n"
         printf -- "- confjour:                  ${BLUE}http://localhost:8087${ENDCOLOR}\n"
-        printf -- "- intermediator:           ${BLUE}http://localhost:8090${ENDCOLOR}\n"
+        printf -- "- intermediator:           ${BLUE}http://localhost:8088${ENDCOLOR}\n"
         echo " "
         echo "Please visit eureka page to check whether all 5 modules are running as expected. "
     )
@@ -94,7 +94,7 @@ startDev(){
         printf -- "- eureka:                  ${BLUE}http://localhost:5272${ENDCOLOR}\n"
         printf -- "- auth:                   ${BLUE}http://localhost:8762${ENDCOLOR}\n"
         printf -- "- confjour:                  ${BLUE}http://localhost:5678${ENDCOLOR}\n"
-        printf -- "- intermediator:           ${BLUE}http://localhost:8090${ENDCOLOR}\n"
+        printf -- "- intermediator:           ${BLUE}http://localhost:8088${ENDCOLOR}\n"
         echo " "
         echo "Please visit eureka page to check whether all 5 modules are running as expected. "
     )
@@ -108,7 +108,7 @@ stopdocker() {
     eureka_pid=`lsof -i:8085|grep "LISTEN"|awk '{print $2}'`;
     auth_pid=`lsof -i:8086|grep "LISTEN"|awk '{print $2}'`;
     confjour_pid=`lsof -i:8087|grep "LISTEN"|awk '{print $2}'`;
-    intermediator_pid=`lsof -i:8090|grep "LISTEN"|awk '{print $2}'`;
+    intermediator_pid=`lsof -i:8088|grep "LISTEN"|awk '{print $2}'`;
     
     if [ "$eureka_pid" != "" ]
     then
@@ -153,7 +153,7 @@ stopDev() {
     eureka_pid=`lsof -i:5272|grep "LISTEN"|awk '{print $2}'`;
     auth_pid=`lsof -i:8762|grep "LISTEN"|awk '{print $2}'`;
     confjour_pid=`lsof -i:5678|grep "LISTEN"|awk '{print $2}'`;
-    intermediator_pid=`lsof -i:8090|grep "LISTEN"|awk '{print $2}'`;
+    intermediator_pid=`lsof -i:8088|grep "LISTEN"|awk '{print $2}'`;
     
     if [ "$eureka_pid" != "" ]
     then
