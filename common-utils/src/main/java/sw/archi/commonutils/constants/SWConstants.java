@@ -70,7 +70,7 @@ public class SWConstants {
 
     public static final String journalIssueTableName = "JournalIssue";
 
-    public static final String groupTableName = "Group";
+    public static final String conferenceGroupTableName = "ConferenceGroup";
 
     public static String userEmail = "email";
 

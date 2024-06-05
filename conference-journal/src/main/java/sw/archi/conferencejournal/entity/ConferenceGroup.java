@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Group {
+public class ConferenceGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,6 @@ public class Group {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
-    @Column(name = "conference_id")
     Conference conferenceId;
 
     @Column(name = "group_name")

@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 import sw.archi.commonutils.constants.SWConstants;
 import sw.archi.commonutils.helper.GeneralServiceHelper;
 import sw.archi.conferencejournal.dao.ConferenceCfpRepository;
+import sw.archi.conferencejournal.dao.ConferenceGroupRepository;
 import sw.archi.conferencejournal.dao.ConferenceRepository;
 import sw.archi.conferencejournal.dao.FollowedConferenceRepository;
 import sw.archi.conferencejournal.dao.FollowedJournalRepository;
-import sw.archi.conferencejournal.dao.GroupRepository;
 import sw.archi.conferencejournal.dao.JournalCfpRepository;
 import sw.archi.conferencejournal.dao.JournalIssueRepository;
 import sw.archi.conferencejournal.dao.JournalRepository;
@@ -30,7 +30,7 @@ public class GeneralService {
     public FollowedJournalRepository followedJournalRepository;
 
     @Autowired
-    public GroupRepository groupRepository;
+    public ConferenceGroupRepository conferenceGroupRepository;
 
     @Autowired
     public JournalCfpRepository journalCfpRepository;

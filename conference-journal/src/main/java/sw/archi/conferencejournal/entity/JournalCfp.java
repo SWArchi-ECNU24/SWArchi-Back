@@ -23,7 +23,6 @@ public class JournalCfp {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "journal_id", referencedColumnName = "journal_id")
-    @Column(name = "journal_id", nullable = false)
     Journal journalId;
 
     @Column(name = "submission_information")

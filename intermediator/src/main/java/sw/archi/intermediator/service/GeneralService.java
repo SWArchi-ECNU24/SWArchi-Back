@@ -151,7 +151,7 @@ public class GeneralService {
                             SWConstants.confjourModuleName,
                             SWConstants.journalTableName,
                             obj.getIntValue(SWConstants.journalId));
-                case SWConstants.groupTableName:
+                case SWConstants.conferenceGroupTableName:
                     Boolean flag = true;
                     for (String id : obj.getString(SWConstants.userId).split(",")) {
                         flag &= checkId(

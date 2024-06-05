@@ -99,25 +99,6 @@ CREATE
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for conference_participation
--- ----------------------------
-DROP
-    TABLE
-        IF EXISTS conference_participation;
-
-CREATE
-    TABLE
-        conference_participation(
-            cp_id INT NOT NULL AUTO_INCREMENT,
-            user_id INT NOT NULL,
-            conference_id INT NOT NULL,
-            PRIMARY KEY(cp_id)
-                USING BTREE
-        ) ENGINE = InnoDB CHARACTER
-    SET
-        = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
 -- Table structure for followed_conference
 -- ----------------------------
 DROP
@@ -160,11 +141,11 @@ CREATE
 -- ----------------------------
 DROP
     TABLE
-        IF EXISTS GROUP;
+        IF EXISTS conference_group;
 
 CREATE
     TABLE
-        GROUP(
+        conference_group(
             group_id INT NOT NULL AUTO_INCREMENT,
             conference_id INT NOT NULL,
             group_name VARCHAR(255) CHARACTER
