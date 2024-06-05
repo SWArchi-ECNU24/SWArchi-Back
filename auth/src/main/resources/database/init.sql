@@ -11,7 +11,7 @@
  Target Server Version : 80037 (8.0.37)
  File Encoding         : 65001
 
- Date: 29/05/2024 18:41:22
+ Date: 05/06/2024 18:22:23
 */
 
 SET NAMES utf8mb4;
@@ -45,6 +45,6 @@ CREATE TABLE `user_followers`  (
                                    INDEX `followers_id`(`followers_id` ASC) USING BTREE,
                                    CONSTRAINT `user_followers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
                                    CONSTRAINT `user_followers_ibfk_2` FOREIGN KEY (`followers_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 SET FOREIGN_KEY_CHECKS = 1;
