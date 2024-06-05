@@ -15,6 +15,7 @@ import sw.archi.commonutils.helper.DataHelper;
 import sw.archi.commonutils.helper.HttpDataHelper;
 import sw.archi.commonutils.helper.HttpHelper;
 import sw.archi.commonutils.struct.EnumCode;
+import sw.archi.intermediator.constants.IMConstants;
 import sw.archi.intermediator.helper.FilterHelper;
 
 @Service
@@ -74,6 +75,10 @@ public class GeneralService {
             return HttpDataHelper.error(EnumCode.getEnumCodeType(EnumCode.PARAMETER_ERROR.getCode()));
         }
 
+        if (!checkForeignKey(moduleName, tableName, value)) {
+            return HttpDataHelper.error(EnumCode.getEnumCodeType(EnumCode.PARAMETER_ERROR.getCode()));
+        }
+
         if (Objects.equals(id, null)) {
             String api = "api/" + moduleName + "/add";
 
@@ -96,6 +101,87 @@ public class GeneralService {
             return HttpHelper.forwardHttpDataHelperDirectly(restTemplate
                     .exchange(uriBuilder.toUriString(), HttpMethod.PUT, null, JSONObject.class)
                     .getBody());
+        }
+    }
+
+    public Boolean checkId(String baseUrl, String moduleName, String tableName, int id) {
+        return Objects.equals(getDataById(baseUrl, moduleName, tableName, id).getCode(), EnumCode.SUCCESS.getCode());
+    }
+
+    public Boolean checkForeignKey(String moduleName, String tableName, JSONObject obj) {
+        if (Objects.equals(moduleName, SWConstants.authModulePackageName)) {
+            switch (tableName) {
+                case SWConstants.followedConferenceTableName:
+                    return checkId(
+                                    IMConstants.authModuleBaseUrl,
+                                    SWConstants.authModuleName,
+                                    SWConstants.userTableName,
+                                    obj.getIntValue(SWConstants.userId))
+                            && checkId(
+                                    IMConstants.confjourModuleBaseUrl,
+                                    SWConstants.confjourModuleName,
+                                    SWConstants.conferenceTableName,
+                                    obj.getIntValue(SWConstants.conferenceId));
+                case SWConstants.followedJournalTableName:
+                    return checkId(
+                                    IMConstants.authModuleBaseUrl,
+                                    SWConstants.authModuleName,
+                                    SWConstants.userTableName,
+                                    obj.getIntValue(SWConstants.userId))
+                            && checkId(
+                                    IMConstants.confjourModuleBaseUrl,
+                                    SWConstants.confjourModuleName,
+                                    SWConstants.journalTableName,
+                                    obj.getIntValue(SWConstants.journalId));
+                case SWConstants.conferenceCfpTableName:
+                    return checkId(
+                            IMConstants.confjourModuleBaseUrl,
+                            SWConstants.confjourModuleName,
+                            SWConstants.conferenceTableName,
+                            obj.getIntValue(SWConstants.conferenceId));
+                case SWConstants.journalCfpTableName:
+                    return checkId(
+                            IMConstants.confjourModuleBaseUrl,
+                            SWConstants.confjourModuleName,
+                            SWConstants.journalTableName,
+                            obj.getIntValue(SWConstants.journalId));
+                case SWConstants.journalIssueTableName:
+                    return checkId(
+                            IMConstants.confjourModuleBaseUrl,
+                            SWConstants.confjourModuleName,
+                            SWConstants.journalTableName,
+                            obj.getIntValue(SWConstants.journalId));
+                case SWConstants.groupTableName:
+                    Boolean flag = true;
+                    for (String id : obj.getString(SWConstants.userId).split(",")) {
+                        flag &= checkId(
+                                IMConstants.authModuleBaseUrl,
+                                SWConstants.authModuleName,
+                                SWConstants.userTableName,
+                                Integer.parseInt(id));
+                    }
+                    return flag;
+                default:
+                    return true;
+            }
+        } else {
+            switch (tableName) {
+                case SWConstants.userFollowersTableName:
+                    return checkId(
+                                    IMConstants.authModuleBaseUrl,
+                                    SWConstants.authModuleName,
+                                    SWConstants.userTableName,
+                                    obj.getIntValue(SWConstants.userId))
+                            && checkId(
+                                    IMConstants.authModuleBaseUrl,
+                                    SWConstants.authModuleName,
+                                    SWConstants.userTableName,
+                                    obj.getIntValue(SWConstants.followId))
+                            && !Objects.equals(
+                                    obj.getIntValue(SWConstants.userId), obj.getIntValue(SWConstants.followId));
+                default:
+                    return true;
+            }
         }
     }
 }

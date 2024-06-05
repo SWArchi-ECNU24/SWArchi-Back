@@ -3,6 +3,7 @@ package sw.archi.intermediator.helper;
 import com.alibaba.fastjson.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import sw.archi.commonutils.constants.SWConstants;
 import sw.archi.commonutils.helper.DataHelper;
@@ -59,7 +60,8 @@ public class FilterHelper {
 
     public static int getTableId(JSONObject obj) {
         return (int) obj.entrySet().stream()
-                .filter(singleton -> DataHelper.softIncludes(SWConstants.idSuffix, singleton.getKey()))
+                .filter(singleton -> DataHelper.softIncludes(SWConstants.idSuffix, singleton.getKey())
+                        && Objects.equals(singleton.getValue().getClass(), Integer.class))
                 .collect(Collectors.toList())
                 .get(0)
                 .getValue();
