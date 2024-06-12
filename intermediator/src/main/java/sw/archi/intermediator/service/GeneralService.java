@@ -161,6 +161,17 @@ public class GeneralService {
                                 Integer.parseInt(id));
                     }
                     return flag;
+                case SWConstants.joinConferenceTableName:
+                    return checkId(
+                                    IMConstants.authModuleBaseUrl,
+                                    SWConstants.authModuleName,
+                                    SWConstants.userTableName,
+                                    obj.getIntValue(SWConstants.userId))
+                            && checkId(
+                                    IMConstants.confjourModuleBaseUrl,
+                                    SWConstants.confjourModuleName,
+                                    SWConstants.conferenceTableName,
+                                    FilterHelper.getTableId(obj.getJSONObject(SWConstants.conferenceId)));
                 default:
                     return true;
             }
