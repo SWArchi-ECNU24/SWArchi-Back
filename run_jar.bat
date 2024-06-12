@@ -49,7 +49,7 @@ echo.
 echo -----------------------------------
 start java -jar eureka.jar ^>^> %eureka_jar_log%
 start java -jar auth.jar ^>^> %auth_jar_log%
-start java -jar confjour.jar ^>^> %confjour_jar_log%
+start java -jar conference-journal.jar ^>^> %confjour_jar_log%
 start java -jar intermediator.jar ^>^> %intermediator_jar_log%
 echo Starting......
 
