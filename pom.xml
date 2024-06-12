@@ -164,6 +164,12 @@
 			</activation>
 		</profile>
 		<profile>
+			<id>prod</id>
+			<properties>
+				<profileActive>prod</profileActive>
+			</properties>
+		</profile>
+		<profile>
 			<id>docker</id>
 			<properties>
 				<profileActive>docker</profileActive>
