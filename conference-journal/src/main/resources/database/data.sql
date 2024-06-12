@@ -33,26 +33,22 @@ INSERT
         'Santa Clara, California, USA',
         18,
         'Overview\r\n\r\nThe 18th USENIX Symposium on Operating Systems Design and Implementation seeks to present innovative, exciting research in computer systems. OSDI brings together professionals from academic and industrial backgrounds in a premier forum for discussing the design, implementation, and implications of systems software. OSDI emphasizes innovative research and quantified or insightful experiences in systems design and implementation.\r\n\r\nOSDI takes a broad view of the systems area and solicits contributions from many fields of systems practice, including operating systems, file and storage systems, distributed systems, cloud computing, mobile systems, secure and reliable systems, systems aspects of big data, embedded systems, virtualization, networking as it relates to operating systems, and management and troubleshooting of complex systems. We also welcome work that explores the interface to related areas such as computer architecture, networking, programming languages, analytics, and databases. We encourage contributions with highly original ideas, new approaches, and groundbreaking results.\r\n\r\nSubmitting a Paper\r\n\r\nSubmissions will be judged on novelty, significance, interest, clarity, relevance, and correctness. Accepted papers will be shepherded through an editorial review process by a member of the program committee.\r\n\r\nA good paper will:\r\n\r\n    Motivate a significant problem\r\n    Propose an interesting and compelling solution\r\n    Demonstrate the practicality and benefits of the solution\r\n    Draw appropriate conclusions\r\n    Clearly describe the paper\' s contributions\r\n Clearly articulate the advances beyond previous work\r\n\r\nAccepted papers will generally be available online TO registered attendees BEFORE the conference. IF your accepted paper should NOT be published PRIOR TO the event,
-        please notify production@usenix.org. The papers will be available online TO everyone beginning ON
-        the FIRST DAY OF the symposium.\r\n\r\nPapers accompanied BY nondisclosure agreement forms will NOT be considered. ALL submissions will be treated AS confidential PRIOR TO publication ON
-        the OSDI \'24 website; rejected submissions will be permanently treated as confidential.\r\n\r\nSimultaneous submission of the same work to multiple venues, submission of previously published work, or plagiarism constitutes dishonesty or fraud. USENIX, like other scientific and technical conferences and journals, prohibits these practices and may, on the recommendation of a program chair, take action against authors who have committed them. See the USENIX Conference Submissions Policy for details.\r\n\r\nSubmitting a paper that had been previously submitted to and not accepted by another conference is permitted as long as the authors have substantially addressed the previous reviewers\' comments. IF the PRIOR conference\'s rejection notification has been received less than two months before the OSDI \' 24 submission deadline,
-        THEN the authors ARE requested TO provide information regarding the previous submission
+        \n please notify production@usenix.org. The papers will be available online TO everyone beginning ON\n the FIRST DAY OF the symposium.\r\n\r\nPapers accompanied BY nondisclosure agreement forms will NOT be considered. ALL submissions will be treated AS confidential PRIOR TO publication ON\n the OSDI \'24 website; rejected submissions will be permanently treated as confidential.\r\n\r\nSimultaneous submission of the same work to multiple venues, submission of previously published work, or plagiarism constitutes dishonesty or fraud. USENIX, like other scientific and technical conferences and journals, prohibits these practices and may, on the recommendation of a program chair, take action against authors who have committed them. See the USENIX Conference Submissions Policy for details.\r\n\r\nSubmitting a paper that had been previously submitted to and not accepted by another conference is permitted as long as the authors have substantially addressed the previous reviewers\' comments. IF the PRIOR conference\'s rejection notification has been received less than two months before the OSDI \' 24 submission deadline,
+        \n THEN the authors ARE requested TO provide information regarding the previous submission\n
         AND a summary OF the subsequent revisions TO the paper. This information should be uploaded via the submission form,
-        AND will NOT be shared WITH the OSDI \'24 reviewers.\r\n\r\nPrior or concurrent workshop publication does not preclude publishing a related paper in OSDI. The online submission form will require authors to submit a copy of the related workshop paper and a short explanation of the new material in the conference paper beyond that published in the workshop version. The co-chairs may then share that paper with the workshop\' s organizers
-        AND discuss it WITH them.\r\n\r\nPrior
+        \n
+        AND will NOT be shared WITH the OSDI \'24 reviewers.\r\n\r\nPrior or concurrent workshop publication does not preclude publishing a related paper in OSDI. The online submission form will require authors to submit a copy of the related workshop paper and a short explanation of the new material in the conference paper beyond that published in the workshop version. The co-chairs may then share that paper with the workshop\' s organizers\n
+        AND discuss it WITH them.\r\n\r\nPrior\n
         OR concurrent publication IN non - peer - reviewed contexts,
-        LIKE arXiv.org,
-        technical reports,
-        talks,
+        \n LIKE arXiv.org,
+        \n technical reports,
+        \n talks,
+        \n
         AND social media posts,
-        IS permitted. However,
-        your OSDI submission must use an anonymized name FOR your project
-        OR SYSTEM that differs
-    FROM
-        ANY used IN such contexts.\r\n\r\nUSENIX discourages program co - chairs
-    FROM
-        submitting papers TO the conferences they organize,
-        although they ARE allowed TO do so. Should either program co - chair submit WORK TO OSDI \'24, their papers will be handled exclusively by the other program co-chair and reviewed according to the same rigorous and double-blinded procedures that the program committee applies to all papers. In the event that a paper is co-authored by, or otherwise conflicted with both co-chairs, the co-chairs will designate a PC member to manage the reviewing process for that paper.\r\n\r\nQuestions? Contact your program co-chairs, osdi24chairs@usenix.org, or the USENIX office, submissionspolicy@usenix.org.\r\n\r\nBy submitting a paper, you agree that at least one of the authors will attend the conference to present it. If the conference registration fee will pose a hardship for the presenter of the accepted paper, please contact conference@usenix.org. For very special circumstances (such as travel restrictions or health issues), USENIX may provide the possibility of remote presentation and Q&A.\r\n\r\nIf your paper is accepted and you need an invitation letter to apply for a visa to attend the conference, please contact conference@usenix.org as soon as possible. Visa applications are reportedly taking more than two months to process. Please identify yourself as a presenter or an author, and include your mailing address in your email request.'
+        \n IS permitted. However,
+        \n your OSDI submission must use an anonymized name FOR your project\n
+        OR SYSTEM that differs\n FROM\n ANY used IN such contexts.\r\n\r\nUSENIX discourages program co - chairs\n FROM\n submitting papers TO the conferences they organize,
+        \n although they ARE allowed TO do so. Should either program co - chair submit WORK TO OSDI \'24, their papers will be handled exclusively by the other program co-chair and reviewed according to the same rigorous and double-blinded procedures that the program committee applies to all papers. In the event that a paper is co-authored by, or otherwise conflicted with both co-chairs, the co-chairs will designate a PC member to manage the reviewing process for that paper.\r\n\r\nQuestions? Contact your program co-chairs, osdi24chairs@usenix.org, or the USENIX office, submissionspolicy@usenix.org.\r\n\r\nBy submitting a paper, you agree that at least one of the authors will attend the conference to present it. If the conference registration fee will pose a hardship for the presenter of the accepted paper, please contact conference@usenix.org. For very special circumstances (such as travel restrictions or health issues), USENIX may provide the possibility of remote presentation and Q&A.\r\n\r\nIf your paper is accepted and you need an invitation letter to apply for a visa to attend the conference, please contact conference@usenix.org as soon as possible. Visa applications are reportedly taking more than two months to process. Please identify yourself as a presenter or an author, and include your mailing address in your email request.'
     );
 
 INSERT
@@ -192,6 +188,45 @@ INSERT
     );
 
 -- ----------------------------
+-- Records of followed_conference
+-- ----------------------------
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        2,
+        1,
+        1
+    );
+
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        3,
+        1,
+        2
+    );
+
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        4,
+        2,
+        3
+    );
+
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        5,
+        2,
+        4
+    );
+
+-- ----------------------------
 -- Records of journal
 -- ----------------------------
 INSERT
@@ -312,4 +347,27 @@ INSERT
         '1077-3142',
         'The central focus of this journal is the computer analysis of pictorial information. Computer Vision and Image Understanding publishes papers covering all aspects of image analysis from the low-level, iconic processes of early vision to the high-level, symbolic processes of recognition and interpretation. A wide range of topics in the image understanding area is covered, including papers offering insights that differ from predominant views.\r\n\r\nResearch Areas Include:\r\n\r\n• Theory\r\n• Early vision\r\n• Data structures and representations\r\n• Shape\r\n• Range\r\n• Motion\r\n• Matching and recognition\r\n• Architecture and languages\r\n• Vision systems',
         'Special Issue on Advanced Computational Imaging and Photography Measurement\r\n截稿日期: 2024-09-15\r\n\r\nComputational photography revolutionizes digital image capture and processing by harnessing artificial intelligence to enhance traditional optical-based imaging. This approach opens up a diverse array of possibilities to augment camera capabilities, enabling functionalities previously unattainable in film-based photography, while also reducing the cost and size of camera components.\r\n\r\nPowered by recent artificial intelligence techniques, cameras have become ubiquitous in the modern world. These cameras incorporate features such as 3D imaging, HDR imaging systems, depth of field control, extended field of view, noise removal, and super-resolution. Despite the growing number of related research papers, many issues still remain, and new problems emerge. Directly migrating the recent methodologies and technologies, such as the Diffusion model, 3D Gaussian Splatting, and LLM, may not achieve reasonable performance due to the unique characteristics of new image sensors and camera systems. There is ample room for improvement in contemporary theories, methodologies, and applications for computational photography and intelligent imaging. \r\n\r\nThis special issue aims to explore the latest advancements in photography measurement and imaging within the context of the data-driven age. We invite submissions from authors exploring the advances of artificial intelligence technologies to benefit applications ranging from sensing to image reconstruction. Our goal is to facilitate connections across broad and cross-disciplinary research areas, including photometric reconstruction, computational optical imaging, low-level computer vision, immersive media, signal processing, as well as current and emerging techniques and technologies in these domains. The list of possible topics includes, but is not limited to:\r\n\r\nGuest editors:\r\nYakun Ju, PhDNanyang Technological University, Singapore, Singapore\r\nBihan Wen, PhDNanyang Technological University, Singapore, Singapore\r\nWuyuan Xie, PhDShenzhen University, Shenzhen, China\r\nShiqi Wang, PhDCity University of Hong Kong, Hongkong, China\r\nAlex Chichung Kot, PhDNanyang Technological University, Singapore, Singapore '
+    );
+
+-- ----------------------------
+-- Records of conference_group
+-- ----------------------------
+INSERT
+    INTO
+        conference_group
+    VALUES(
+        1,
+        1,
+        '有请下一组',
+        '23'
+    );
+
+INSERT
+    INTO
+        conference_group
+    VALUES(
+        2,
+        2,
+        '卷死其他组',
+        '45'
     );

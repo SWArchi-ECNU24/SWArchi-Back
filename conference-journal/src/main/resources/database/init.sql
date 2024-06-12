@@ -11,7 +11,7 @@
  Target Server Version : 80037 (8.0.37)
  File Encoding         : 65001
 
- Date: 05/06/2024 18:22:08
+ Date: 11/06/2024 23:47:05
 */
 SET
 NAMES utf8mb4;
@@ -99,45 +99,10 @@ CREATE
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for followed_conference
+-- Records of conference_cfp
 -- ----------------------------
-DROP
-    TABLE
-        IF EXISTS followed_conference;
-
-CREATE
-    TABLE
-        followed_conference(
-            user_id INT NOT NULL,
-            conference_id INT NOT NULL,
-            follow_id INT NOT NULL AUTO_INCREMENT,
-            PRIMARY KEY(follow_id)
-                USING BTREE
-        ) ENGINE = InnoDB CHARACTER
-    SET
-        = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
 -- ----------------------------
--- Table structure for followed_journal
--- ----------------------------
-DROP
-    TABLE
-        IF EXISTS followed_journal;
-
-CREATE
-    TABLE
-        followed_journal(
-            followed_id INT NOT NULL AUTO_INCREMENT,
-            user_id INT NOT NULL,
-            conference_id INT NOT NULL,
-            PRIMARY KEY(followed_id)
-                USING BTREE
-        ) ENGINE = InnoDB CHARACTER
-    SET
-        = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Table structure for group
+-- Table structure for conference_group
 -- ----------------------------
 DROP
     TABLE
@@ -165,9 +130,108 @@ CREATE
                 CASCADE ON
                 UPDATE
                     CASCADE
+        ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER
+    SET
+        = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Table structure for followed_conference
+-- ----------------------------
+DROP
+    TABLE
+        IF EXISTS followed_conference;
+
+CREATE
+    TABLE
+        followed_conference(
+            user_id INT NOT NULL,
+            conference_id INT NOT NULL,
+            follow_id INT NOT NULL AUTO_INCREMENT,
+            PRIMARY KEY(follow_id)
+                USING BTREE
+        ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER
+    SET
+        = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Table structure for followed_journal
+-- ----------------------------
+DROP
+    TABLE
+        IF EXISTS followed_journal;
+
+CREATE
+    TABLE
+        followed_journal(
+            followed_id INT NOT NULL AUTO_INCREMENT,
+            user_id INT NOT NULL,
+            journal_id INT NOT NULL,
+            PRIMARY KEY(followed_id)
+                USING BTREE
         ) ENGINE = InnoDB CHARACTER
     SET
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of followed_journal
+-- ----------------------------
+-- ----------------------------
+-- Table structure for join_conference
+-- ----------------------------
+DROP
+    TABLE
+        IF EXISTS join_conference;
+
+CREATE
+    TABLE
+        join_conference(
+            join_id INT NOT NULL AUTO_INCREMENT,
+            user_id INT NOT NULL,
+            conference_id INT NOT NULL,
+            PRIMARY KEY(join_id)
+                USING BTREE
+        ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER
+    SET
+        = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of join_conference
+-- ----------------------------
+INSERT
+    INTO
+        join_conference
+    VALUES(
+        1,
+        2,
+        1
+    );
+
+INSERT
+    INTO
+        join_conference
+    VALUES(
+        2,
+        3,
+        1
+    );
+
+INSERT
+    INTO
+        join_conference
+    VALUES(
+        3,
+        4,
+        2
+    );
+
+INSERT
+    INTO
+        join_conference
+    VALUES(
+        4,
+        5,
+        2
+    );
 
 -- ----------------------------
 -- Table structure for journal
@@ -247,6 +311,9 @@ CREATE
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
+-- Records of journal_cfp
+-- ----------------------------
+-- ----------------------------
 -- Table structure for journal_issue
 -- ----------------------------
 DROP
@@ -281,5 +348,10 @@ CREATE
         ) ENGINE = InnoDB CHARACTER
     SET
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of journal_issue
+-- ----------------------------
+
 SET
 FOREIGN_KEY_CHECKS = 1;
