@@ -99,9 +99,6 @@ CREATE
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of conference_cfp
--- ----------------------------
--- ----------------------------
 -- Table structure for conference_group
 -- ----------------------------
 DROP
@@ -171,67 +168,6 @@ CREATE
         ) ENGINE = InnoDB CHARACTER
     SET
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of followed_journal
--- ----------------------------
--- ----------------------------
--- Table structure for join_conference
--- ----------------------------
-DROP
-    TABLE
-        IF EXISTS join_conference;
-
-CREATE
-    TABLE
-        join_conference(
-            join_id INT NOT NULL AUTO_INCREMENT,
-            user_id INT NOT NULL,
-            conference_id INT NOT NULL,
-            PRIMARY KEY(join_id)
-                USING BTREE
-        ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER
-    SET
-        = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of join_conference
--- ----------------------------
-INSERT
-    INTO
-        join_conference
-    VALUES(
-        1,
-        2,
-        1
-    );
-
-INSERT
-    INTO
-        join_conference
-    VALUES(
-        2,
-        3,
-        1
-    );
-
-INSERT
-    INTO
-        join_conference
-    VALUES(
-        3,
-        4,
-        2
-    );
-
-INSERT
-    INTO
-        join_conference
-    VALUES(
-        4,
-        5,
-        2
-    );
 
 -- ----------------------------
 -- Table structure for journal
@@ -311,9 +247,6 @@ CREATE
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of journal_cfp
--- ----------------------------
--- ----------------------------
 -- Table structure for journal_issue
 -- ----------------------------
 DROP
@@ -348,10 +281,5 @@ CREATE
         ) ENGINE = InnoDB CHARACTER
     SET
         = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of journal_issue
--- ----------------------------
-
 SET
 FOREIGN_KEY_CHECKS = 1;

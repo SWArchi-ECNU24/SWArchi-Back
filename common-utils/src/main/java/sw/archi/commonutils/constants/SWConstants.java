@@ -68,8 +68,6 @@ public class SWConstants {
 
     public static final String journalCfpTableName = "JournalCfp";
 
-    public static final String joinConferenceTableName = "JoinConference";
-
     public static final String journalIssueTableName = "JournalIssue";
 
     public static final String conferenceGroupTableName = "ConferenceGroup";
