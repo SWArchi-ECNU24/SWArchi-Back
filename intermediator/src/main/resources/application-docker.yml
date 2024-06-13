@@ -29,7 +29,7 @@ springdoc:
 application:
   auth:
     url: http://AUTH-SERVICE/
-    default-url: http://localhost:8086/
+    default-url: http://host.docker.internal:8086/
   confjour:
-    url: http://CONFJOUR-SERVICE/
-    default-url: http://localhost:8087/
+    url: http://CONFERENCE-JOURNAL-SERVICE/
+    default-url: http://host.docker.internal:8087/
