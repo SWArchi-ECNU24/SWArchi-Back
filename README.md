@@ -9,6 +9,8 @@
   - [运行项目](#运行项目)
     - [便捷的启动方式](#便捷的启动方式)
   - [文档](#文档)
+    - [开发文档](#开发文档)
+    - [交付文档](#交付文档)
   - [说明](#说明)
 
 ## Contributors
@@ -50,8 +52,15 @@ chmod 755 run_backend.sh
 
 ## 文档
 
+### 开发文档
+
 - [各类问题](./docs/QA.md)
 - [规范与开发教程](./docs/StandardInstruction.md)
+
+### 交付文档
+
+- [部署文档](./docs/DeployInstruction.md)
+- [设计文档](./docs/Design.md)
 
 ## 说明
 
