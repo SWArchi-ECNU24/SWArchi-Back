@@ -119,7 +119,7 @@ erDiagram
         int followers_id FK
     }
 
-    user |o..o| user_followers : relates
+    user }o--o{ user_followers : relates
 
 ```
 
