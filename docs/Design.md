@@ -79,22 +79,22 @@ flowchart LR
 
 ```mermaid
 sequenceDiagram
-    Frontend-+Intermediator: Request
-    Intermediator-+Module: Processed Request
-    Module---Intermediator: Response
-    Intermediator---Frontend: Processed Response
+    Frontend->>+Intermediator: Request
+    Intermediator->>+Module: Processed Request
+    Module-->>-Intermediator: Response
+    Intermediator-->>-Frontend: Processed Response
 ```
 
 ```mermaid
 sequenceDiagram
-    Intermediator-+Controller: Request
-    Controller-+Service: Processed Request
-    Service-+Dao: Call with SQL Operations
-    Dao-+Db: Data Request
-    Db---Dao: Data Response
-    Dao---Service: Data Response
-    Service---Controller: Processed Data Response
-    Controller---Intermediator: Response
+    Intermediator->>+Controller: Request
+    Controller->>+Service: Processed Request
+    Service->>+Dao: Call with SQL Operations
+    Dao->>+Db: Data Request
+    Db-->>-Dao: Data Response
+    Dao-->>-Service: Data Response
+    Service-->>-Controller: Processed Data Response
+    Controller-->>-Intermediator: Response
 ```
 
 ## 数据库ER图
