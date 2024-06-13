@@ -61,6 +61,7 @@ chmod 755 run_backend.sh
 
 - [部署文档](./docs/DeployInstruction.md)
 - [设计文档](./docs/Design.md)
+- [需求文档](./docs/Requirement.md)
 
 ## 说明
 
