@@ -52,7 +52,7 @@ public class FilterHelper {
                 break;
             case SWConstants.journalTableName:
                 keyNames.put(SWConstants.journalName, String.class);
-                keyNames.put(SWConstants.journalName, String.class);
+                keyNames.put(SWConstants.journalUrl, String.class);
                 break;
             case SWConstants.conferenceGroupTableName:
                 keyNames.put(SWConstants.groupName, String.class);
