@@ -237,6 +237,7 @@ INSERT
         'International Journal of Information Management',
         'https://www.sciencedirect.com/journal/international-journal-of-information-management',
         NULL,
+        NULL,
         '18.95',
         'Elsevier',
         '0268-4012',
@@ -252,6 +253,7 @@ INSERT
         'IEEE Journal on Selected Areas in Communications (JSAC)',
         'https://www.comsoc.org/publications/journals/ieee-jsac',
         'a',
+        '2024-07-15 00:00:00',
         '11.42',
         'IEEE',
         '0733-8716',
@@ -266,6 +268,7 @@ INSERT
         3,
         'Nano Energy',
         'https://www.journals.elsevier.com/nano-energy',
+        NULL,
         NULL,
         '17.60',
         'Elsevier',
@@ -282,6 +285,7 @@ INSERT
         'Information Systems (IS)',
         'http://www.journals.elsevier.com/information-systems/',
         'b',
+        NULL,
         '2.309',
         'Elsevier',
         '0306-4379',
@@ -294,24 +298,10 @@ INSERT
         journal
     VALUES(
         5,
-        'IEEE Journal on Selected Areas in Communications (JSAC)',
-        'https://www.comsoc.org/publications/journals/ieee-jsac',
-        'a',
-        '11.42',
-        'IEEE',
-        '0733-8716',
-        'Each issue of the IEEE Journal on Selected Areas in Communications (J-SAC) is devoted to a specific technical topic and thus provides to J-SAC readers a collection of up-to-date papers on that topic. These issues are valuable to the research community and become valuable references. The technical topics covered by J-SAC issues span the entire field of communications and networking. J-SAC publishes only papers that are submitted in response to a Call-for-Papers. These calls are published in J-SAC issues and other publications of the IEEE Communications Society as appropriate to the subject area of the call. Papers submitted for review for possible publication in a J-SAC issue must be submitted to one of the Guest Editors listed in the Call-for-Papers. \r\n\r\nRecent issue themes included:\r\n\r\n    Speech and Image Coding.\r\n    Medical Communications.\r\n    HDTV and Digital Video Communications.\r\n    B-ISDN Applications and Economics.\r\n    Wireless Personal Communications.\r\n    Advances in Satellite Communication.\r\n    Fading Channels and Equalization.\r\n    Spread Spectrum.',
-        'Special Issue on Advances in Internet Routing and Addressing\r\n截稿日期: 2024-05-31\r\n\r\nApplications are placing increasingly sophisticated demands on the network for better quality, more predictability, and greater reliability. Some of these applications are futuristic predictions (for example, holographic conferencing, immersive digital worlds, intelligent industry, telemedicine, automated agriculture, and sensory Internet), while existing applications are already seeing real network demands (such as multiplayer augmented- or virtual-reality games, industrial networking, and distributed AI). This overlaps with a growing trend to extend end-to-end communications to include highly computational processes (e.g., emergent intelligent application), machines and moving objects (such as autonomous cars and drones), while increasing the ability to virtualize and replicate any network or service for improved efficiency and redundancy. Also, new environments, such as beyond 5G, manufacturing, or Non-Terrestrial Networks pose new challenges to the requirements, such as time-variance of connectivity availability. At the same time, integrating connectivity with computational services is seen as another important consideration to improve the overall system’s efficiency and, ultimately, carbon footprint.\r\n\r\nIn this Special Issue, we solicit work on use cases, design principles, architectures, and techniques, but also insights into implementations and experiments with novel solutions that address the highlighted objectives.\r\n\r\nTopics of Interest\r\n- Advanced applications and use case analysis and requirements\r\n- Goals and challenges in future and evolving routing and addressing schemes\r\n- Architecture frameworks for multi-purpose routing\r\n- Domain specific interconnection architectures\r\n- Routing on multiple optimality criteria\r\n- Compute-aware routing and forwarding\r\n- Low latency forwarding techniques\r\n- Time-variable routing and forwarding\r\n- Enhanced host protocol stacks for advanced routing and forwarding solutions\r\n- Routing on new forms of identification\r\n- Coordination of information and decisions across multiple domains (regions & technology layers)\r\n- Routing based on formal routing algebras and regular expressions approaches\r\n- Routing for constrained and intermittently connected environments\r\n- Routing and forwarding based on AI-based methods, such as federated learning\r\n- Centralized and other platforms for routing and addressing architectures\r\n- Routing with modern SDN architectures and protocols\r\n- Programmable forwarding architectures for data and for control.\r\n- Security & Privacy of semantic enhancements\r\n- Scalability analysis of novel routing mechanisms and semantic enhancements\r\n- Economic and game-theoretical analysis of enhanced network semantics\r\n- Stability design and analysis\r\n- Experience and deployment '
-    );
-
-INSERT
-    INTO
-        journal
-    VALUES(
-        6,
         'Journal of Grid Computing (JGC)',
         'http://www.springer.com/computer/communication+networks/journal/10723',
         'c',
+        NULL,
         '3.986',
         'Springer',
         '1570-7873',
@@ -323,10 +313,11 @@ INSERT
     INTO
         journal
     VALUES(
-        7,
+        6,
         'IEEE Transactions on Network and Service Management (TNSM)',
         'https://www.comsoc.org/publications/journals/ieee-tnsm',
         'c',
+        NULL,
         '3.878',
         'IEEE',
         '1932-4537',
@@ -338,10 +329,11 @@ INSERT
     INTO
         journal
     VALUES(
-        8,
+        7,
         'Computer Vision and Image Understanding (CVIU)',
         'http://www.journals.elsevier.com/computer-vision-and-image-understanding/',
         'b',
+        '2024-09-15 00:00:00'
         '3.876',
         'Elsevier',
         '1077-3142',
