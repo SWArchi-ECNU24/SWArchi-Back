@@ -6,6 +6,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,5 +38,6 @@ public class User {
     String institution;
 
     @Column(name = "signup_date")
+    @JSONField(format = "yyyy-MM-dd")
     Date signupDate;
 }

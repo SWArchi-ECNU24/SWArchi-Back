@@ -9,6 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,6 +33,7 @@ public class ConferenceCfp {
     String submissionDeadline;
 
     @Column(name = "notification_date")
+    @JSONField(format = "yyyy-MM-dd")
     Date notificationDate;
 
     @Column(name = "submission_information")
