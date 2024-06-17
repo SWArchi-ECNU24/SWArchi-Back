@@ -4,7 +4,7 @@ WORKDIR /docker/swArchi/build
 
 COPY /target/eureka-?.?.?-SNAPSHOT.jar /docker/swArchi/build/eureka.jar
 COPY /target/auth-?.?.?-SNAPSHOT.jar /docker/swArchi/build/auth.jar
-COPY /target/confjour-?.?.?-SNAPSHOT.jar /docker/swArchi/build/confjour.jar
+COPY /target/conference-journal-?.?.?-SNAPSHOT.jar /docker/swArchi/build/conference-journal.jar
 COPY /target/intermediator-?.?.?-SNAPSHOT.jar /docker/swArchi/build/intermediator.jar
 
 COPY /run_jar.sh /docker/swArchi/build

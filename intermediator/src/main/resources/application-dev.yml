@@ -31,5 +31,5 @@ application:
     url: http://AUTH-SERVICE/
     default-url: http://localhost:5273/
   confjour:
-    url: http://CONFJOUR-SERVICE/
+    url: http://CONFERENCE-JOURNAL-SERVICE/
     default-url: http://localhost:5274/

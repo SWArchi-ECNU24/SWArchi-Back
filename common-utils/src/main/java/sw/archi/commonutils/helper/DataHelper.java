@@ -269,4 +269,32 @@ public class DataHelper {
 
         return filterKeyWords(origin, keys);
     }
+
+    public static JSONArray filterData(JSONArray origin, JSONObject queryObject, Map<String, Class<?>> keyTypes) {
+        List<KeyTriple> keys = new ArrayList<>();
+
+        for (Map.Entry<String, Object> singleton : queryObject.entrySet()) {
+            KeyTriple obj = new KeyTriple(
+                    singleton.getKey(),
+                    keyTypes.get(singleton.getKey()),
+                    keyTypes.get(singleton.getKey()).cast(singleton.getValue()));
+            keys.add(obj);
+        }
+
+        return JSON.parseArray(JSON.toJSONString(origin.toJavaList(JSONObject.class).stream()
+                .filter(singleton -> {
+                    boolean flag = true;
+                    for (KeyTriple key : keys) {
+                        flag &= Objects.equals(key.getClassName(), String.class)
+                                ? DataHelper.softIncludes(
+                                        String.valueOf(key.getKeyValue()), singleton.getString(key.getKeyName()))
+                                : Objects.equals(key.getClassName().cast(key.getKeyValue()), null)
+                                        || Objects.equals(
+                                                key.getClassName().cast(key.getKeyValue()),
+                                                singleton.getObject(key.getKeyName(), key.getClassName()));
+                    }
+                    return flag;
+                })
+                .collect(Collectors.toList())));
+    }
 }

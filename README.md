@@ -9,6 +9,8 @@
   - [运行项目](#运行项目)
     - [便捷的启动方式](#便捷的启动方式)
   - [文档](#文档)
+    - [开发文档](#开发文档)
+    - [交付文档](#交付文档)
   - [说明](#说明)
 
 ## Contributors
@@ -21,8 +23,8 @@
 
 - 权限：All
 - 端口：`3306`
-- 账号：``
-- 密码：``
+- 账号：`SWArchi`
+- 密码：`123ppp456`
 
 ## 运行项目
 
@@ -50,8 +52,16 @@ chmod 755 run_backend.sh
 
 ## 文档
 
+### 开发文档
+
 - [各类问题](./docs/QA.md)
 - [规范与开发教程](./docs/StandardInstruction.md)
+
+### 交付文档
+
+- [部署文档](./docs/DeployInstruction.md)
+- [设计文档](./docs/Design.md)
+- [需求文档](./docs/Requirement.md)
 
 ## 说明
 

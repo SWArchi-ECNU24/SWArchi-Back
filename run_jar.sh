@@ -27,7 +27,7 @@ startjar(){
     echo "-----------------------------------"
     (java -jar eureka.jar >> $eureka_jar_log) &
     (java -jar auth.jar >> $auth_jar_log) &
-    (java -jar confjour.jar  >> $confjour_jar_log) &
+    (java -jar conference-journal.jar  >> $confjour_jar_log) &
     (java -jar intermediator.jar >> $intermediator_jar_log) &
     (
         echo "Starting......"

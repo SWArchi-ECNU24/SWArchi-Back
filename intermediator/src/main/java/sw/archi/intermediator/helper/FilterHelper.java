@@ -10,6 +10,12 @@ import sw.archi.commonutils.helper.DataHelper;
 
 public class FilterHelper {
 
+    public static Map<String, Class<?>> generateKeyTypes(String moduleName, String tableName) {
+        Map<String, Class<?>> keyTypes = new HashMap<>();
+
+        return keyTypes;
+    }
+
     public static Map<String, Class<?>> generateKeyNames(String moduleName, String tableName) {
 
         switch (moduleName) {
@@ -46,7 +52,7 @@ public class FilterHelper {
                 break;
             case SWConstants.journalTableName:
                 keyNames.put(SWConstants.journalName, String.class);
-                keyNames.put(SWConstants.journalName, String.class);
+                keyNames.put(SWConstants.journalUrl, String.class);
                 break;
             case SWConstants.conferenceGroupTableName:
                 keyNames.put(SWConstants.groupName, String.class);

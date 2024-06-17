@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>sw.archi</groupId>
 	<artifactId>backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>SWArchi-backend</name>
 	<description>Software Architecture Project</description>
 	<packaging>pom</packaging>
@@ -162,6 +162,12 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<profileActive>prod</profileActive>
+			</properties>
 		</profile>
 		<profile>
 			<id>docker</id>
