@@ -99,6 +99,9 @@ USE parter;
 -- ----------------------------
 -- Records of conference
 -- ----------------------------
+-- ----------------------------
+-- Records of conference
+-- ----------------------------
 INSERT
     INTO
         conference
@@ -283,6 +286,182 @@ INSERT
         'Hyderabad, India',
         21,
         'The IEEE International Conference on Software Architecture (ICSA) is the premier gathering of practitioners and researchers interested in software architecture, component-based software engineering, and quality aspects of complex software systems. The 21st IEEE International Conference on Software Architecture (ICSA 2024) continues the tradition of a working conference, where practitioners and researchers meet and where software architects can explain the challenges they face and try to influence the future of the field. Interactive working sessions will be the place where researchers meet practitioners to identify opportunities to create the future.\r\n\r\nRecent advances in capabilities and availability of generative artificial intelligence (AI) now allow users to generate text, source code, graphics, videos, and 3D models based on natural language descriptions. Software architects are already starting to use these tools to rationalize design decisions, to explore technology options, to synthesize source code based on patterns, and to generate architecture diagrams. The theme of ICSA 2024 is thus “Software Architecture in the Age of Generative AI”. The conference welcomes contributions exploring the potentials and risks of this new technology for software architecture. We are particularly interested in soliciting papers describing novel tools, techniques, and methods to support software architects using generative AI. We are also looking for software and system architecture case studies that successfully or unsuccessfully applied this new technology.\r\n\r\nBesides the main theme, we call on both researchers and practitioners for contributions that advance our understanding of architectures in real-world software, facilitate empirical research by making architectural artifacts and tools publicly available, and promote replicability of results through common datasets and benchmarks. We welcome original papers that explore and explain the role of architecture in current systems and future systems. This conference looks at what can be learned from our software architecture history, experience, studies, and best practices.\r\n\r\nTopics\r\n\r\nTopics of interest for the conference include (but are not limited to) the following:\r\n\r\n    Requirements & Architecture\r\n        Stakeholder management and collaborating with other domains\r\n        Stakeholder management and collaborating with other domains\r\n        Linking architecture to requirements and/or implementation\r\n        Methods to address the intertwining of specification and design\r\n        Sustainability, ethics, business, financial, and managerial aspects of software architecture\r\n    Architecture Design\r\n        Model-driven architecture\r\n        Component-based software engineering\r\n        Architecture frameworks and architecture description languages\r\n        Reusable architectural solutions & architecture knowledge management\r\n    Cloud-native Computing & Architecture\r\n        Microservices & containerization\r\n        Serverless platforms & novel forms of virtualization (WASM, MicroVMs, etc.)\r\n        Event-driven architectures\r\n        Observability & Distributed Tracing\r\n    Architecture Evaluation\r\n        Evaluating quality aspects (e.g., security, performance, reliability, evolvability)\r\n        AI/ML techniques for architecture\r\n        Architecture conformance checking\r\n        Lightweight evaluation methods\r\n    Architecture & Life-cycle\r\n        Automatic extraction and generation of software architecture descriptions\r\n        Architecture & continuous integration/delivery, and DevOps\r\n        Refactoring and evolving architecture design decisions and solutions\r\n        Agile architecting, continuous architecting, and other approaches to architecting\r\n    Architecture & Architects\r\n        Roles and responsibilities for software architects\r\n        Training, soft skills, coaching, mentoring, education, and certification\r\n        Architecture for equality, diversity and inclusion\r\n        State-of-the-art and state-of-practice in software architecture\r\n    Architecture for specific types of systems, such as:\r\n        Edge / Fog / Internet of Things (IoT) systems / IoB systems\r\n        AI / ML systems & systems using blockchains\r\n        Cyber-physical systems\r\n        Self-adaptive & autonomous systems\r\n    Architecture & Generative AI:\r\n        Design assistance & identification of architectural patterns\r\n        Decision making support, comparing technologies, evaluating trade-offs\r\n        Generating source code to facilitate implementing architecture designs\r\n        Reviewing designs, identifying inconsistencies, and suggesting improvements'
+    );
+
+-- ----------------------------
+-- Records of followed_conference
+-- ----------------------------
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        2,
+        1,
+        1
+    );
+
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        3,
+        1,
+        2
+    );
+
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        4,
+        2,
+        3
+    );
+
+INSERT
+    INTO
+        followed_conference
+    VALUES(
+        5,
+        2,
+        4
+    );
+
+-- ----------------------------
+-- Records of journal
+-- ----------------------------
+INSERT
+    INTO
+        journal
+    VALUES(
+        1,
+        'International Journal of Information Management',
+        'https://www.sciencedirect.com/journal/international-journal-of-information-management',
+        NULL,
+        NULL,
+        '18.95',
+        'Elsevier',
+        '0268-4012',
+        'The International Journal of Information Management (IJIM) is an international, peer-reviewed journal which aims to bring its readers the very best analysis and discussion in the developing field of information management.\r\n\r\nThe journal:\r\n\r\n• Keeps the reader briefed with major papers, reports and reviews\r\n• Is topical: Viewpoint articles and other regular features including Research Notes, Case Studies and a Reviews section help keep the reader up to date with current issues.\r\n• Focusses on high quality papers that address contemporary issues for all those involved in information management and which make a contribution to advancing information management theory and practice.\r\n\r\nInformation is critical for the survival and growth of organisations and people. The challenge for Information management is now less about managing activities that collect, store and disseminate information. Rather, there is greater focus on managing activities that make changes in patterns of behaviour of customers, people, and organizations, and information that leads to changes in the way people use information to engage in knowledge focussed activities.\r\n\r\nInformation management covers a wide field and we encourage submissions from diverse areas of practice and settings including business, health, education and government.\r\n\r\nTopics covered include:\r\n\r\nAspects of information management in learning organisations, health care (patients as well health workers and managers), business intelligence, security in organizations, social interactions and community development, knowledge management, information design and delivery, information for health care, Information for knowledge creation, legal and regulatory issues, IS-enabled innovations in information, content and knowledge management, philosophical and methodological approaches to information management research, new and emerging agendas for information research and reflective accounts of professional practice. ',
+        'Special Issue on Royal Bank International Research Seminar, Culture and Morphing the Real World into the Virtual World\r\n截稿日期: 2024-05-31\r\n\r\nThe sixteenth meeting of the Royal Bank International Research Seminar will take place at the John Molson School of Business in Montreal, on September 14-16, 2023. The main topic of this seminar is to explore the role of culture in morphing the real world into the virtual world.\r\n\r\nGuest editors:\r\n\r\nProf. Michel Laroche\r\nDepartment of Marketing, John Molson School of Business\r\nConcordia University, 1455 de Maisonneuve Blvd. West\r\nMontreal, Quebec H3G 1M8, Canada\r\n(Michel.laroche@concordia.ca)\r\n\r\nSpecial issue information:\r\n\r\nThe sixteenth meeting of the Royal Bank International Research Seminar will take place at the John Molson School of Business in Montreal, on September 14-16, 2023. The main topic of this seminar is to explore the role of culture in morphing the real world into the virtual world. The main objective of the seminar is to bring together international researchers from different disciplines interested in advancing knowledge on the role of culture in a rapidly changing digital landscape. In recent developments, the digital transformation continues to accelerate; technology affects interpersonal relationships more than ever before requiring researchers to reconsider established paradigms in relation to current and future information technologies. Marketers must now deal with the influence of new information technologies on the increasingly wired consumers and rapidly developing market configurations.\r\n\r\nPapers are sought in the following areas of culture, new information technologies, and new consumption patterns (the list is not exhaustive):\r\n\r\n    Advancing/Building the theory regarding consumption and adoption of new information technologies, e.g., IoT, metaverse, Artificial Intelligence, and blockchain.\r\n    Acculturation and ethnic identity influences on marketing strategies for the wired consumers.\r\n    Understanding the use of mobile technology and wearables in changing shopping and consumption patterns.\r\n    Influences of robotics on families and reference groups across cultures.\r\n    Influence of new technologies on materialism, values, and cultural tendencies across cultures.\r\n    Transcultural, social well-being, and public policy issues regarding new consumption patterns across cultures, especially among teenagers and vulnerable groups.\r\n    Methodological issues relevant to studying the new consumption patterns, especially the use of big data analytics, robotics, and artificial intelligence.\r\n    Role of new information technologies on advertising perceptions and virtual stores across cultures.\r\n    New pricing issues across cultures, especially the influences of models from the new sharing economies.\r\n    Social media and internet based marketing issues across cultures, including social commerce and co-branding issues.\r\n    Multicultural brand communities and global social media.\r\n    New communication channels and their impact on images of products in cross-cultural contexts.\r\n    Impact of new technologies on product quality perceptions across cultures.\r\n    Culture and the role of new information technologies in consumer journeys.\r\n    Understanding cultural differences in the appreciation of digital sensory experiences.\r\n    Human-robot interactions in different cultural contexts.\r\n\r\nPapers should be less than 30 double-space pages, with 1” margins and 12 pt fonts, and follow the guidelines of the International Journal of Information Management. Electronic submissions are required. All papers will be subject to a double blind peer review procedure. The best papers of the Royal Bank International Research Seminar will be considered for publication in a IJIM Special issue on Culture in morphing the real world into the virtual world.\r\n\r\nManuscript submission information:\r\n\r\nThe deadline for submissions is 31st May 2024.\r\n\r\nPlease send your submissions (or any inquiry) by email to our Managing Guest Editor, Prof. Michel Laroche at Michel.laroche@concordia.ca \r\n\r\nLearn more about the benefits of publishing in a special issue: https://www.elsevier.com/authors/submit-your-paper/special-issues\r\n\r\nInterested in becoming a guest editor? Discover the benefits of guest editing a special issue and the valuable contribution that you can make to your field: https://www.elsevier.com/editors/role-of-an-editor/guest-editors'
+    );
+
+INSERT
+    INTO
+        journal
+    VALUES(
+        2,
+        'IEEE Journal on Selected Areas in Communications (JSAC)',
+        'https://www.comsoc.org/publications/journals/ieee-jsac',
+        'a',
+        '2024-07-15 00:00:00',
+        '11.42',
+        'IEEE',
+        '0733-8716',
+        'Each issue of the IEEE Journal on Selected Areas in Communications (J-SAC) is devoted to a specific technical topic and thus provides to J-SAC readers a collection of up-to-date papers on that topic. These issues are valuable to the research community and become valuable references. The technical topics covered by J-SAC issues span the entire field of communications and networking. J-SAC publishes only papers that are submitted in response to a Call-for-Papers. These calls are published in J-SAC issues and other publications of the IEEE Communications Society as appropriate to the subject area of the call. Papers submitted for review for possible publication in a J-SAC issue must be submitted to one of the Guest Editors listed in the Call-for-Papers. \r\n\r\nRecent issue themes included:\r\n\r\n    Speech and Image Coding.\r\n    Medical Communications.\r\n    HDTV and Digital Video Communications.\r\n    B-ISDN Applications and Economics.\r\n    Wireless Personal Communications.\r\n    Advances in Satellite Communication.\r\n    Fading Channels and Equalization.\r\n    Spread Spectrum.',
+        'Special Issue on Advances in Internet Routing and Addressing\r\n截稿日期: 2024-05-31\r\n\r\nApplications are placing increasingly sophisticated demands on the network for better quality, more predictability, and greater reliability. Some of these applications are futuristic predictions (for example, holographic conferencing, immersive digital worlds, intelligent industry, telemedicine, automated agriculture, and sensory Internet), while existing applications are already seeing real network demands (such as multiplayer augmented- or virtual-reality games, industrial networking, and distributed AI). This overlaps with a growing trend to extend end-to-end communications to include highly computational processes (e.g., emergent intelligent application), machines and moving objects (such as autonomous cars and drones), while increasing the ability to virtualize and replicate any network or service for improved efficiency and redundancy. Also, new environments, such as beyond 5G, manufacturing, or Non-Terrestrial Networks pose new challenges to the requirements, such as time-variance of connectivity availability. At the same time, integrating connectivity with computational services is seen as another important consideration to improve the overall system’s efficiency and, ultimately, carbon footprint.\r\n\r\nIn this Special Issue, we solicit work on use cases, design principles, architectures, and techniques, but also insights into implementations and experiments with novel solutions that address the highlighted objectives.\r\n\r\nTopics of Interest\r\n- Advanced applications and use case analysis and requirements\r\n- Goals and challenges in future and evolving routing and addressing schemes\r\n- Architecture frameworks for multi-purpose routing\r\n- Domain specific interconnection architectures\r\n- Routing on multiple optimality criteria\r\n- Compute-aware routing and forwarding\r\n- Low latency forwarding techniques\r\n- Time-variable routing and forwarding\r\n- Enhanced host protocol stacks for advanced routing and forwarding solutions\r\n- Routing on new forms of identification\r\n- Coordination of information and decisions across multiple domains (regions & technology layers)\r\n- Routing based on formal routing algebras and regular expressions approaches\r\n- Routing for constrained and intermittently connected environments\r\n- Routing and forwarding based on AI-based methods, such as federated learning\r\n- Centralized and other platforms for routing and addressing architectures\r\n- Routing with modern SDN architectures and protocols\r\n- Programmable forwarding architectures for data and for control.\r\n- Security & Privacy of semantic enhancements\r\n- Scalability analysis of novel routing mechanisms and semantic enhancements\r\n- Economic and game-theoretical analysis of enhanced network semantics\r\n- Stability design and analysis\r\n- Experience and deployment '
+    );
+
+INSERT
+    INTO
+        journal
+    VALUES(
+        3,
+        'Nano Energy',
+        'https://www.journals.elsevier.com/nano-energy',
+        NULL,
+        NULL,
+        '17.60',
+        'Elsevier',
+        '2211-2855',
+        'Nano Energy is a multidisciplinary, rapid-publication forum of original peer-reviewed contributions on the science and engineering of nanomaterials and nanodevices used in all forms of energy harvesting, conversion, storage, utilization and policy. Through its mixture of articles, reviews, communications, research news, and information on key developments, Nano Energy provides a comprehensive coverage of this exciting and dynamic field which joins nanoscience and nanotechnology with energy science. The journal is relevant to all those who are interested in nanomaterials solutions to the energy problem.\r\n\r\nDescription:\r\n\r\nNano Energy publishes original experimental and theoretical research on all aspects of energy-related research which utilizes nanomaterials and nanotechnology. Manuscripts of four types are considered: review articles which inform readers of the latest research and advances in energy science; rapid communications which feature exciting research breakthroughs in the field; full-length articles which report comprehensive research developments; and news and opinions which comment on topical issues or express views on the developments in related fields.\r\n\r\nThe editors welcome contributions on a variety of topics such as:\r\n\r\n• Batteries • Fuel Cells • Hydrogen generation and storage • Light emitting diodes • Optoelectronic devices for efficient energy usage • Photovoltaics • Piezoelectric nanogenerators • Policy and perspectives in energy • Recycling of energy materials • Self-powered nanodevices/nanosystems • Supercapacitors • Thermoelectrics',
+        'Special Issue on Advances in Electrochemical CO2 Conversion for Net-Zero Chemical Production\r\n截稿日期: 2024-05-31\r\n\r\nThis special issue provides the latest progress and advances in electrochemical CO2 reduction reaction (CO2RR) for carbon capture and utilization.\r\n\r\nSpecial issue information:\r\n\r\nThis special issue provides the latest progress and advances in electrochemical CO2 reduction reaction (CO2RR) for carbon capture and utilization. Fundamental understandings and technologies of CO2 electrolysis to convert CO2 into value added fuels and feedstocks will be covered in terms of electrocatalysts, electrode, electrolyte, membranes, and electrolyzers. Research strategies and approaches for enhancing product selectivity, production rate, carbon conversion efficiency, and energy efficiency of CO2RR will be key focus of this special issue.\r\n\r\nManuscript submission information:\r\n\r\nThe journal’s submission platform (Editorial Manager®) will be available for receiving submissions to this Special Issue. Please refer to the Guide for Authors to prepare your manuscript, and select the article type of \"VSI: CO2 Electrolysis for CCU\" when submitting your manuscript online. Both the Guide for Authors and the submission portal could be found on the Journal Homepage here: https://www.sciencedirect.com/journal/nano-energy\r\n\r\nAll the submissions deemed suitable to be sent for peer review will be reviewed by at least two independent reviewers. Upon its editorial acceptance, your article will go into production immediately. It will be published in the latest regular issue, while be presented on the specific Special Issue webpage simultaneously. In regular issues, Special Issue articles will be clearly marked and branded.\r\n\r\nSubmission Deadline: May 31, 2024\r\n\r\nThis is an invited-only special issue.\r\n\r\nKeywords:\r\n\r\nElectrochemistry, Electrolysis, CO2 Reduction, Carbon Capture and Utilization (CCU), Electrocatalysts, Electrode, Membrane, Electrolyzers'
+    );
+
+INSERT
+    INTO
+        journal
+    VALUES(
+        4,
+        'Information Systems (IS)',
+        'http://www.journals.elsevier.com/information-systems/',
+        'b',
+        NULL,
+        '2.309',
+        'Elsevier',
+        '0306-4379',
+        'Information systems are the software and hardware systems that support data-intensive applications. The journal Information Systems publishes articles concerning the design and implementation of languages, data models, process models, algorithms, software and hardware for information systems.\r\n\r\nSubject areas include data management issues as presented in the principal international database conferences (e.g. ACM SIGMOD, ACM PODS, VLDB, ICDE and ICDT/EDBT) as well as data-related issues from the fields of data mining, information retrieval, internet and cloud data management, web semantics, visual and audio information systems, scientific computing, and organisational behaviour. Implementation papers having to do with massively parallel data management, fault tolerance in practice, and special purpose hardware for data-intensive systems are also welcome.\r\n\r\nAll papers should motivate the problems they address with compelling examples from real or potential applications. Systems papers must be serious about experimentation either on real systems or simulations based on traces from real systems. Papers from industrial organisations are welcome.\r\n\r\nTheoretical papers should have a clear motivation from applications. They should either break significant new ground or unify and extend existing algorithms. Such papers should clearly state which ideas have potentially wide applicability.\r\n\r\nIn addition to publishing submitted articles, the Editors-in-Chief will invite retrospective articles that describe significant projects by the principal architects of those projects. Authors of such articles should write in the first person, tracing the social as well as technical history of their projects, describing the evolution of ideas, mistakes made, and reality tests.\r\nTechnical results should be explained in a uniform notation with the emphasis on clarity and on ideas that may have applications outside of the environment of that research. Particularly complex details may be summarised with references to previously published papers.\r\n\r\nWe will make every effort to allow authors the right to republish papers appearing in Information Systems in their own books and monographs. ',
+        'Special Issue on Verification, Control, and Repair in Business Process Management\r\n截稿日期: 2024-05-31\r\n\r\nBusiness process management supports the coordination of complex and interrelated activities within one or many organizations. The legitimate executions of business processes (BPs) are usually represented through a BP model, specifying a partial order between the activities to regulate their execution order (control-flow perspective). Several BP models are also augmented with:\r\n\r\ntime and temporal constraints (time perspective)\r\nresources and allocation policies for task executions (resource perspective)\r\ndata and value assignments to keep track of more sources of information (data perspective)\r\n\r\nIf a BP model contains errors in any of the perspectives above, the execution of the BP may end with some constraint violated or remain blocked in a livelock/deadlock where progress/conclusion is no longer possible. Errors in BP models reveal imprecision in BPs (illegitimate behavior, over-constrained models, etc.). All this can only worsen if some parts of the BP are uncontrollable (task duration, choice of execution branch, resource availability, variable value assignments, etc.). To guarantee that BPs can be executed \"safely\" three main methods can be employed:\r\n\r\nverification: determination of errors, constraint violations, livelocks/deadlocks\r\ncontrol: restriction of the possible executions to ensure constraint satisfaction/process completion\r\nrepair: modification of the model to prevent constraint violations/deadlocks/livelocks\r\n\r\nThis special issue looks for submissions delving into these three areas of BPs with particular focus on temporal, resource, and data perspectives, considered in isolation or simultaneously, with respect to discrete and/or continuous domains, employing techniques applied at design or runtime. All techniques advancing these areas are welcome. Techniques coming from or lying at the intersection of communities beyond the BPM/IS/PM, whose results can be tailored to BPs, are especially welcome. Pertinent review papers are also welcome.\r\n\r\nGuest editors:\r\nAssist. Prof. Matteo Zavatteri (Executive Guest Editor)University of Padua, ItalyEmail: matteo.zavatteri@unipd.it Areas of Expertise: formal methods, discrete event systems and supervisory control, temporal networks and reasoning, constraint satisfaction and optimization, planning and scheduling under uncertainty, artificial intelligence, business process management\r\nAssoc. Prof. Massimiliano de LeoniUniversity of Padua (UniPd), ItalyEmail: deleoni@math.unipd.it Areas of Expertise: Business Process Management and Modeling, Process Mining, Business Process Improvement, Process Simulation, Predictive Analytics, and Process-Aware Recommender Systems\r\nProf. Johann EderUniversity of Klagenfurt, AustriaEmail: johann.eder@aau.atAreas of Expertise: information systems engineering, business process management, and data management for medical research\r\nProf. Manfred ReichertUlm University, GermanyEmail: manfred.reichert@uni-ulm.de Areas of Expertise: formal aspects of business process management, flexible business process execution, IoT-aware business processes, object-centric processes, and cognitive aspects of business process modeling and process model comprehension\r\n\r\nManuscript submission information:\r\n\r\nImportant Dates:\r\n\r\nSubmission Open Date: April 30, 2024\r\nSubmission Deadline: August 31, 2024\r\nEditorial Acceptance Deadline: April 30, 2025'
+    );
+
+INSERT
+    INTO
+        journal
+    VALUES(
+        5,
+        'Journal of Grid Computing (JGC)',
+        'http://www.springer.com/computer/communication+networks/journal/10723',
+        'c',
+        NULL,
+        '3.986',
+        'Springer',
+        '1570-7873',
+        'Grid computing is an emerging technology that enables large-scale resource sharing and coordinated problem solving within distributed, often loosely coordinated groups-what are sometimes termed \"virtual organizations. By providing scalable, secure, high-performance mechanisms for discovering and negotiating access to remote resources, Grid technologies promise to make it possible for scientific collaborations to share resources on an unprecedented scale, and for geographically distributed groups to work together in ways that were previously impossible. Similar technologies are being adopted within industry, where they serve as important building blocks for emerging service provider infrastructures.\r\n\r\nEven though the advantages of this technology for classes of applications have been acknowledged, research in a variety of disciplines, including not only multiple domains of computer science (networking, middleware, programming, algorithms) but also application disciplines themselves, as well as such areas as sociology and economics, is needed to broaden the applicability and scope of the current body of knowledge. Topics that fit within this theme include:\r\n\r\nProtocols, middleware, and services for security, discovery, sharing, management etc., of computing, storage, data and other resources - within dynamic, distributed communities.\r\nScaling issues in various dimensions: number of sites, number of users, number of resources, aggregate performance, and amount of data.\r\nPeer-to-peer and internet computing.\r\nDesign environments, application development tools, languages and compilation techniques for GRID Computing.\r\nGrid applications and system solutions in science, engineering and commerce.\r\nNovel uses of Grid Computing concepts and technologies, for example in sensor nets and education.\r\nAdvanced collaboration technologies for collaborative work, information sharing and problem solving.\r\nThe implications of Grid technologies for emerging optical and wireless infrastructures.\r\nThe human and/or market dynamics that may influence resource sharing decisions and the choice of collaboration modalities within small and large communities.',
+        NULL
+    );
+
+INSERT
+    INTO
+        journal
+    VALUES(
+        6,
+        'IEEE Transactions on Network and Service Management (TNSM)',
+        'https://www.comsoc.org/publications/journals/ieee-tnsm',
+        'c',
+        NULL,
+        '3.878',
+        'IEEE',
+        '1932-4537',
+        'IEEE Transactions on Network and Service Management (IEEE TNSM) is a journal for timely publication of archival research on the management of networks, systems, services and applications, as well as on issues in communications software, service engineering, policies and business processes for network and service management. First issue 2007. Subscribers receive online access and an annual archive CD. Print edition is not available.\r\n\r\nThese transactions focus on the key technical issues related to:\r\n\r\n    Management Models\r\n    Architectures and Frameworks\r\n    Service Provisioning\r\n    Reliability and Quality Assurance\r\n    Management Functions\r\n    Enabling Technologies\r\n    Information and Communication Models\r\n    Policies\r\n    Applications and Case Studies\r\n    Emerging Technologies\r\n    Standards',
+        NULL
+    );
+
+INSERT
+    INTO
+        journal
+    VALUES(
+        7,
+        'Computer Vision and Image Understanding (CVIU)',
+        'http://www.journals.elsevier.com/computer-vision-and-image-understanding/',
+        'b',
+        '2024-09-15 00:00:00' '3.876',
+        'Elsevier',
+        '1077-3142',
+        'The central focus of this journal is the computer analysis of pictorial information. Computer Vision and Image Understanding publishes papers covering all aspects of image analysis from the low-level, iconic processes of early vision to the high-level, symbolic processes of recognition and interpretation. A wide range of topics in the image understanding area is covered, including papers offering insights that differ from predominant views.\r\n\r\nResearch Areas Include:\r\n\r\n• Theory\r\n• Early vision\r\n• Data structures and representations\r\n• Shape\r\n• Range\r\n• Motion\r\n• Matching and recognition\r\n• Architecture and languages\r\n• Vision systems',
+        'Special Issue on Advanced Computational Imaging and Photography Measurement\r\n截稿日期: 2024-09-15\r\n\r\nComputational photography revolutionizes digital image capture and processing by harnessing artificial intelligence to enhance traditional optical-based imaging. This approach opens up a diverse array of possibilities to augment camera capabilities, enabling functionalities previously unattainable in film-based photography, while also reducing the cost and size of camera components.\r\n\r\nPowered by recent artificial intelligence techniques, cameras have become ubiquitous in the modern world. These cameras incorporate features such as 3D imaging, HDR imaging systems, depth of field control, extended field of view, noise removal, and super-resolution. Despite the growing number of related research papers, many issues still remain, and new problems emerge. Directly migrating the recent methodologies and technologies, such as the Diffusion model, 3D Gaussian Splatting, and LLM, may not achieve reasonable performance due to the unique characteristics of new image sensors and camera systems. There is ample room for improvement in contemporary theories, methodologies, and applications for computational photography and intelligent imaging. \r\n\r\nThis special issue aims to explore the latest advancements in photography measurement and imaging within the context of the data-driven age. We invite submissions from authors exploring the advances of artificial intelligence technologies to benefit applications ranging from sensing to image reconstruction. Our goal is to facilitate connections across broad and cross-disciplinary research areas, including photometric reconstruction, computational optical imaging, low-level computer vision, immersive media, signal processing, as well as current and emerging techniques and technologies in these domains. The list of possible topics includes, but is not limited to:\r\n\r\nGuest editors:\r\nYakun Ju, PhDNanyang Technological University, Singapore, Singapore\r\nBihan Wen, PhDNanyang Technological University, Singapore, Singapore\r\nWuyuan Xie, PhDShenzhen University, Shenzhen, China\r\nShiqi Wang, PhDCity University of Hong Kong, Hongkong, China\r\nAlex Chichung Kot, PhDNanyang Technological University, Singapore, Singapore '
+    );
+
+-- ----------------------------
+-- Records of conference_group
+-- ----------------------------
+INSERT
+    INTO
+        conference_group
+    VALUES(
+        1,
+        1,
+        '有请下一组',
+        '2,3'
+    );
+
+INSERT
+    INTO
+        conference_group
+    VALUES(
+        2,
+        2,
+        '卷死其他组',
+        '4,5'
     );
 
 -- ----------------------------

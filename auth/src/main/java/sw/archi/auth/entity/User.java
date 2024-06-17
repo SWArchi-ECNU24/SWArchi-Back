@@ -1,5 +1,6 @@
 package sw.archi.auth.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,5 +36,6 @@ public class User {
     String institution;
 
     @Column(name = "signup_date")
+    @JSONField(format = "yyyy-MM-dd")
     Date signupDate;
 }

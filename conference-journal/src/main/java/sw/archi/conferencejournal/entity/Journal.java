@@ -27,6 +27,9 @@ public class Journal {
     @Column(name = "ccf_rank")
     String ccfRank;
 
+    @Column(name = "submission_deadline")
+    String submissionDeadline;
+
     @Column(name = "impact_factor")
     String impactFactor;
 

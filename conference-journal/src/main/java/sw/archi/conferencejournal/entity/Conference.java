@@ -1,5 +1,6 @@
 package sw.archi.conferencejournal.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,9 +36,11 @@ public class Conference {
     String submissionDeadline;
 
     @Column(name = "notification_date")
+    @JSONField(format = "yyyy-MM-dd")
     Date notificationDate;
 
     @Column(name = "conference_date")
+    @JSONField(format = "yyyy-MM-dd")
     Date conferenceDate;
 
     @Column(name = "conference_location")
