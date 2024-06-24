@@ -1,14 +1,11 @@
 package sw.archi.conferencejournal.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,9 +20,8 @@ public class ConferenceCfp {
     @Column(name = "cfp_id", nullable = false)
     int cfpId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "conference_id", referencedColumnName = "conference_id")
-    Conference conferenceId;
+    @Column(name = "conference_id")
+    int conferenceId;
 
     @Column(name = "submission_deadline")
     String submissionDeadline;
