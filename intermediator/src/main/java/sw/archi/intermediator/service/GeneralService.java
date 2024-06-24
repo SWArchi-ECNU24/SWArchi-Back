@@ -2,7 +2,9 @@ package sw.archi.intermediator.service;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -153,7 +155,11 @@ public class GeneralService {
                             obj.getIntValue(SWConstants.journalId));
                 case SWConstants.conferenceGroupTableName:
                     Boolean flag = true;
-                    for (String id : obj.getString(SWConstants.userId).split(",")) {
+                    for (String id : Arrays.asList(
+                                    obj.getString(SWConstants.userId).split(","))
+                            .stream()
+                            .filter(str -> !str.isEmpty())
+                            .collect(Collectors.toList())) {
                         flag &= checkId(
                                 IMConstants.authModuleBaseUrl,
                                 SWConstants.authModuleName,
