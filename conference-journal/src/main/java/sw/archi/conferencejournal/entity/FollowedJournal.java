@@ -1,13 +1,10 @@
 package sw.archi.conferencejournal.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,9 +18,8 @@ public class FollowedJournal {
     @Column(name = "followed_id", nullable = false)
     int followedId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "journal_id", referencedColumnName = "journal_id")
-    Journal journalId;
+    @Column(name = "journal_id")
+    int journalId;
 
     @Column(name = "user_id", nullable = false)
     int userId;

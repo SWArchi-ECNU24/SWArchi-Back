@@ -226,6 +226,10 @@ public class DataHelper {
     public static JSONArray filterEqualKeys(JSONArray origin, List<KeyTriple> keys) {
         return JSON.parseArray(JSON.toJSONString(origin.toJavaList(JSONObject.class).stream()
                 .filter(singleton -> {
+                    if (keys.size() == 0) {
+                        return false;
+                    }
+
                     boolean flag = true;
                     for (KeyTriple key : keys) {
                         flag &= Objects.equals(
