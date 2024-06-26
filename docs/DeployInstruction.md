@@ -66,7 +66,7 @@
 4. docker run：
 
     ```bash
-    docker run -p 8085:8085 -p 8086:8086 -p 8087:8087 -p 8088:8088 --name sw-archi-backend virtual-pet-hospital
+    docker run -p 8085:8085 -p 8086:8086 -p 8087:8087 -p 8088:8088 --name sw-archi-backend sw-archi-backend
     ```
 
 ## 部署时需要示例数据
